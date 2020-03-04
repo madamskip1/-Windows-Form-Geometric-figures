@@ -12,6 +12,11 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class List : Form
     {
+        public const short FILTR_ALL = 0;
+        public const short FILTR_LESS = 1;
+        public const short FILTR_GREATER = 2;
+
+
         private static List _instance;
 
         public static List Instance
@@ -31,21 +36,44 @@ namespace PAIN___Figury_geometryczne
 
         private void List_Load(object sender, EventArgs e)
         {
-            // View_List
+            showList(FILTR_ALL);
+        }
+
+        private void showList(short filtr = List.FILTR_ALL)
+        {
+            View_List.Items.Clear();
+
             FiguresList figuresList = FiguresList.Instance;
             List<Figure> figures = figuresList.Figures;
 
-            foreach(Figure fig in figures)
+            foreach (Figure fig in figures)
             {
-                ListViewItem item = new ListViewItem(fig.Label);
-                string coords = "(" + fig.Coords.x + ", " + fig.Coords.y + ")";
-                item.SubItems.Add(coords);
-                item.SubItems.Add(fig.Area.ToString());
-                item.SubItems.Add(fig.Color);
-
-                View_List.Items.Add(item);
-
+                if (filtr == FILTR_ALL || (filtr == FILTR_LESS && fig.Area < 100) || (filtr == FILTR_GREATER && fig.Area >= 100))
+                    {
+                    ListViewItem item = new ListViewItem(fig.Label);
+                    string coords = "(" + fig.Coords.X + ", " + fig.Coords.Y + ")";
+                    item.SubItems.Add(coords);
+                    item.SubItems.Add(fig.Area.ToString());
+                    item.SubItems.Add(fig.Color);
+                    item.SubItems.Add(fig.ShapeName());
+                    View_List.Items.Add(item);
+                }
             }
+        }
+
+        private void Filtr_Less_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Filtr_All.Checked)
+                showList(FILTR_ALL);
+            else if (Filtr_Less.Checked)
+                showList(FILTR_LESS);
+            else
+                showList(FILTR_GREATER);
         }
     }
 }

@@ -8,7 +8,9 @@ namespace PAIN___Figury_geometryczne
 {
     class Triangle : Figure
     {
-        private static string ShapeName = "traiangle";
-
+        public override string ShapeName()
+        {
+            return "Triangle";
+        }
     }
 }

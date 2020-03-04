@@ -16,6 +16,7 @@ namespace PAIN___Figury_geometryczne
         private string previousColor;
         private int? previousArea;
         private Point previousPoint;
+        private Figure cur;
 
         public static Modify _instance;
 
@@ -39,6 +40,7 @@ namespace PAIN___Figury_geometryczne
             previousArea = null;
             previousColor = null;
             previousPoint = null;
+            cur = null;
 
 
             Modify_CoordsXInput.Text = "";
@@ -64,8 +66,8 @@ namespace PAIN___Figury_geometryczne
 
             Modify_ColorInput.Text = previousColor;
             Modify_AreaInput.Text = previousArea.ToString();
-            Modify_CoordsXInput.Text = previousPoint.x.ToString();
-            Modify_CoordsYInput.Text = previousPoint.y.ToString();
+            Modify_CoordsXInput.Text = previousPoint.X.ToString();
+            Modify_CoordsYInput.Text = previousPoint.Y.ToString();
         }
 
         private void Modify_FormClosed(object sender, FormClosedEventArgs e)
@@ -82,8 +84,10 @@ namespace PAIN___Figury_geometryczne
             if (fig == null)
                 return;
 
-            int x = fig.Coords.x;
-            int y = fig.Coords.y;
+            cur = fig;
+
+            int x = fig.Coords.X;
+            int y = fig.Coords.Y;
             int area = fig.Area;
             string label = fig.Label;
             string color = fig.Color;
@@ -96,6 +100,17 @@ namespace PAIN___Figury_geometryczne
             previousColor = color;
             previousPoint = new Point(x, y);
             previousArea = area;
+        }
+
+        private void Modify_ModifyButton_Click(object sender, EventArgs e)
+        {
+            if (cur == null)
+                return;
+
+            cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
+            cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
+            cur.Area = int.Parse(Modify_AreaInput.Text);
+            cur.Color = Modify_ColorInput.Text;
         }
     }
 }

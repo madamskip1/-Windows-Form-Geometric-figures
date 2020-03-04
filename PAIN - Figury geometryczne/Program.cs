@@ -15,9 +15,9 @@ namespace PAIN___Figury_geometryczne
         static void Main()
         {
             FiguresList list = FiguresList.Instance;
-            Figure fig1 = new Figure();
-            Figure fig2 = new Figure();
-            Figure fig3 = new Figure();
+            Figure fig1 = new Triangle();
+            Figure fig2 = new Square();
+            Figure fig3 = new Circle();
 
             fig1.Label = "Test1";
             fig1.Color = "#11111";

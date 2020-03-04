@@ -52,6 +52,7 @@
     <Compile Include="Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Circle.cs" />
     <Compile Include="Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,7 @@
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Square.cs" />
     <Compile Include="Triangle.cs" />
     <EmbeddedResource Include="Add.resx">
       <DependentUpon>Add.cs</DependentUpon>

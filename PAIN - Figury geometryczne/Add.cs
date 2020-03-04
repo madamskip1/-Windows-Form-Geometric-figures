@@ -62,7 +62,11 @@ namespace PAIN___Figury_geometryczne
             int area = int.Parse(Add_AreaInput.Text);
 
             FiguresList figures = FiguresList.Instance;
-            Figure figure = new Figure();
+            Figure figure = figures.byName(name);
+            if (figure != null)
+                return;
+
+            figure = new Triangle();
             figure.Area = area;
             figure.Coords = new Point(x, y);
             figure.Color = color;

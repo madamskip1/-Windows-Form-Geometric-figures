@@ -60,8 +60,8 @@ namespace PAIN___Figury_geometryczne
 
             last = fig;
 
-            int x = fig.Coords.x;
-            int y = fig.Coords.y;
+            int x = fig.Coords.X;
+            int y = fig.Coords.Y;
             int area = fig.Area;
             string label = fig.Label;
             string color = fig.Color;
@@ -78,6 +78,8 @@ namespace PAIN___Figury_geometryczne
                 return;
 
             FiguresList.Instance.delete(last);
+            clearAll();
+            Delete_SearchInput.Text = "";
         }
 
         private void Delete_FormClosing(object sender, FormClosingEventArgs e)
