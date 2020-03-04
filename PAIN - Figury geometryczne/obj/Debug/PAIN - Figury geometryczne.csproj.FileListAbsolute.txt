@@ -1,0 +1,13 @@
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.exe.config
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.exe
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.pdb
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csprojAssemblyReference.cache
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Add.resources
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.MainForm.resources
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Modify.resources
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Properties.Resources.resources
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csproj.GenerateResource.cache
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.exe
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.pdb
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Delete.resources
+C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.List.resources
