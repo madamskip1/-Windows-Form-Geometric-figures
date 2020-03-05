@@ -32,6 +32,9 @@ namespace PAIN___Figury_geometryczne
         public List()
         {
             InitializeComponent();
+            Add.Instance.AddEvent += button1_Click;
+            Delete.Instance.DeleteEvent += button1_Click;
+            Modify.Instance.ModifyEvent += button1_Click;
         }
 
         private void List_Load(object sender, EventArgs e)
@@ -68,12 +71,12 @@ namespace PAIN___Figury_geometryczne
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Filtr_All.Checked)
-                showList(FILTR_ALL);
+            if (Filtr_Greater.Checked)
+                showList(FILTR_GREATER);
             else if (Filtr_Less.Checked)
                 showList(FILTR_LESS);
             else
-                showList(FILTR_GREATER);
+                showList(FILTR_ALL);
         }
     }
 }

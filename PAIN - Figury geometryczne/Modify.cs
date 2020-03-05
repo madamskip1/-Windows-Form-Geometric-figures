@@ -12,7 +12,8 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class Modify : Form
     {
-        
+        public event EventHandler ModifyEvent;
+
         private string previousColor;
         private int? previousArea;
         private Point previousPoint;
@@ -33,6 +34,21 @@ namespace PAIN___Figury_geometryczne
         public Modify()
         {
             InitializeComponent();
+            Delete.Instance.DeleteEvent += deleted;
+        }
+
+        private void deleted(object sender, EventArgs e)
+        {
+            if (cur == null)
+                return;
+
+            Figure fig = FiguresList.Instance.byName(cur.Label);
+
+            if (fig == null)
+            {
+                clearAll();
+                Modify_SearchInput.Text = "";
+            }
         }
 
         private void clearAll()
@@ -111,6 +127,9 @@ namespace PAIN___Figury_geometryczne
             cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
             cur.Area = int.Parse(Modify_AreaInput.Text);
             cur.Color = Modify_ColorInput.Text;
+
+            if (ModifyEvent != null)
+                ModifyEvent(this, null);
         }
     }
 }

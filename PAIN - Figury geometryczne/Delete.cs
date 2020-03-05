@@ -12,6 +12,8 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class Delete : Form
     {
+        public event EventHandler DeleteEvent;
+
         private static Delete _instance;
         private Figure last;
 
@@ -29,6 +31,13 @@ namespace PAIN___Figury_geometryczne
         public Delete()
         {
             InitializeComponent();
+            //Modify.Instance.ModifyEvent += Modified;
+        }
+
+
+        private void Modified(object sender, EventArgs e)
+        {
+            //prepare(last.Label);
         }
 
 
@@ -41,16 +50,8 @@ namespace PAIN___Figury_geometryczne
             Delete_ColorInput.Text = "";
         }
 
-
-        private void Delete_FormClosed(object sender, FormClosedEventArgs e)
+        private void prepare(string name)
         {
-            _instance = null;
-        }
-
-
-        private void Delete_SearchButton_Click(object sender, EventArgs e)
-        {
-            string name = Delete_SearchInput.Text;
             Figure fig = FiguresList.Instance.byName(name);
 
             clearAll();
@@ -72,12 +73,28 @@ namespace PAIN___Figury_geometryczne
             Delete_ColorInput.Text = color;
         }
 
+
+        private void Delete_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+        }
+
+
+        private void Delete_SearchButton_Click(object sender, EventArgs e)
+        {
+            string name = Delete_SearchInput.Text;
+            prepare(name);
+        }
+
         private void Delete_ModifyButton_Click(object sender, EventArgs e)
         {
             if (last == null)
                 return;
 
             FiguresList.Instance.delete(last);
+            
+            if (DeleteEvent != null)
+                DeleteEvent(this, null);
             clearAll();
             Delete_SearchInput.Text = "";
         }
