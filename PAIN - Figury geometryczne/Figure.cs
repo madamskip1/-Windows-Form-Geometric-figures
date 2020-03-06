@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace PAIN___Figury_geometryczne
 {
-    abstract class Figure
+    public abstract class Figure
     {
         protected string _color;
         protected Point _coords;
-        protected int _area;
+        protected int? _area;
         protected string _label;
 
+        public Figure()
+        {
+            _color = null;
+            _coords = null;
+            _area = null;
+            _label = null;
+        }
         public abstract string ShapeName();
 
         public string Color

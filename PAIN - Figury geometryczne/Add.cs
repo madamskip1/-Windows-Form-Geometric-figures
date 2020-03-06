@@ -12,7 +12,7 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class Add : Form
     {
-        public event EventHandler AddEvent;
+        public event EventHandler<FigureEventArgs> NewFigureAdded;
 
         private static Add _instance;
 
@@ -76,8 +76,8 @@ namespace PAIN___Figury_geometryczne
 
             figures.add(figure);
 
-            if (AddEvent != null)
-                AddEvent(this, null);
+            if (NewFigureAdded != null)
+                NewFigureAdded(this, new FigureEventArgs(figure));
         }
 
         private void Add_Activated(object sender, EventArgs e)

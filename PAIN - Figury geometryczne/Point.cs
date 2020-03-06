@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PAIN___Figury_geometryczne
 {
-    class Point
+    public class Point
     {
         private int _x;
         private int _y;

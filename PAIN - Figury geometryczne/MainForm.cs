@@ -15,20 +15,34 @@ namespace PAIN___Figury_geometryczne
         public MainForm()
         {
             InitializeComponent();
+            InitalizeEvents();
         }
+
+
+        private void InitalizeEvents()
+        {
+
+        }
+
 
         /// <summary>
         /// Check if form can be closed
         /// </summary>
         void closingChild(object sender, FormClosingEventArgs e)
         {
-            if (this.MdiChildren.Length < 2)
-                e.Cancel = true;
+            //if (this.MdiChildren.Length < 2)
+            //    e.Cancel = true;
         }
 
-        public void setItemsCounter(int count)
+        public void setItemsCounter(object sender, EventArgs e, int count)
         {
             StatusBar_Items.Text = count.ToString();
+        }
+
+
+        private void ChildActivated(object sender, EventArgs e)
+        {
+            
         }
 
 
@@ -47,7 +61,7 @@ namespace PAIN___Figury_geometryczne
         private void MainButtons_Add_Click(object sender, EventArgs e)
         {
             Add add = Add.Instance;
-            add.MdiParent = this;
+            //add.MdiParent = this;
             add.FormClosing += closingChild;
             add.Show();
             add.Activate();

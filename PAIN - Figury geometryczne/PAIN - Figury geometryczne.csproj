@@ -60,6 +60,7 @@
       <DependentUpon>Delete.cs</DependentUpon>
     </Compile>
     <Compile Include="Figure.cs" />
+    <Compile Include="FigureEventArgs.cs" />
     <Compile Include="FiguresList.cs" />
     <Compile Include="List.cs">
       <SubType>Form</SubType>
