@@ -31,21 +31,6 @@ namespace PAIN___Figury_geometryczne
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Add_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _instance = null;
-        }
-
         private void Add_ClearButton_Click(object sender, EventArgs e)
         {
             Add_CoordsXInput.Clear();
@@ -58,17 +43,33 @@ namespace PAIN___Figury_geometryczne
         private void Add_AddButton_Click(object sender, EventArgs e)
         {
             string name = Add_NameInput.Text;
-            string color = Add_ColorInput.Text;
-            int x = int.Parse(Add_CoordsXInput.Text);
-            int y = int.Parse(Add_CoordsYInput.Text);
-            int area = int.Parse(Add_AreaInput.Text);
-
-            FiguresList figures = FiguresList.Instance;
-            Figure figure = figures.byName(name);
-            if (figure != null)
+            if (String.IsNullOrEmpty(name))
                 return;
 
-            figure = new Triangle();
+            string color = Add_ColorInput.Text;
+            if (String.IsNullOrEmpty(color))
+                return;
+
+            string xText = Add_CoordsXInput.Text;
+            if (String.IsNullOrEmpty(xText))
+                return;
+
+            string yText = Add_CoordsYInput.Text;
+            if (String.IsNullOrEmpty(yText))
+                return;
+
+            string areaText = Add_AreaInput.Text;
+            if (String.IsNullOrEmpty(areaText))
+                return;
+
+
+            int x = int.Parse(xText);
+            int y = int.Parse(yText);
+            int area = int.Parse(areaText);
+
+            FiguresList figures = FiguresList.Instance;
+
+            Figure figure = new Triangle();
             figure.Area = area;
             figure.Coords = new Point(x, y);
             figure.Color = color;
@@ -78,10 +79,83 @@ namespace PAIN___Figury_geometryczne
 
             if (NewFigureAdded != null)
                 NewFigureAdded(this, new FigureEventArgs(figure));
+
+            Close();
         }
 
         private void Add_Activated(object sender, EventArgs e)
         {
+        }
+
+        private void Add_AreaInput_Validating(object sender, CancelEventArgs e)
+        {
+            if(!Figure.ValidateArea(Add_AreaInput.Text))
+            {
+                Add_ErrorProvider.SetError(Add_AreaInput, "Must be a integer, greater than 0.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Add_AreaInput_Validated(object sender, EventArgs e)
+        {
+            Add_ErrorProvider.SetError(Add_AreaInput, "");
+        }
+
+
+        private void Add_CoordsXInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateCoord(Add_CoordsXInput.Text))
+            {
+                Add_ErrorProvider.SetError(Add_CoordsXInput, "Must be a integer.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Add_CoordsXInput_Validated(object sender, EventArgs e)
+        {
+            Add_ErrorProvider.SetError(Add_CoordsXInput, "");
+        }
+
+        private void Add_CoordsYInput_Validated(object sender, EventArgs e)
+        {
+            Add_ErrorProvider.SetError(Add_CoordsYInput, "");
+        }
+
+        private void Add_CoordsYInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateCoord(Add_CoordsYInput.Text))
+            {
+                Add_ErrorProvider.SetError(Add_CoordsYInput, "Must be a integer.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Add_ColorInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateColor(Add_ColorInput.Text))
+            {
+                Add_ErrorProvider.SetError(Add_ColorInput, "Must be a HEX color format.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Add_ColorInput_Validated(object sender, EventArgs e)
+        {
+            Add_ErrorProvider.SetError(Add_ColorInput, "");
+        }
+
+        private void Add_NameInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateLabel(Add_NameInput.Text))
+            {
+                Add_ErrorProvider.SetError(Add_NameInput, "Label cannot be empty.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Add_NameInput_Validated(object sender, EventArgs e)
+        {
+            Add_ErrorProvider.SetError(Add_NameInput, "");
         }
     }
 }

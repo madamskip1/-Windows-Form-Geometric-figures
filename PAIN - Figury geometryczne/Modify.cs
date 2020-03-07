@@ -12,125 +12,50 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class Modify : Form
     {
-        public event EventHandler ModifyEvent;
-        public event EventHandler<FigureEventArgs> FigureModified;
+        public static event EventHandler<FigureEventArgs> FigureModified;
 
-        private string previousColor;
-        private int? previousArea;
-        private Point previousPoint;
         private Figure cur;
 
-        public static Modify _instance;
-
-        public static Modify Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new Modify();
-                    _instance.InitializeEvents();
-                }
-                return _instance;
-            }
-        }
 
         public Modify()
         {
             InitializeComponent();
         }
 
-        private void InitializeEvents()
+        public Modify(Figure fig) : this()
         {
-            //Delete.Instance.DeleteEvent += deleted;
-        }
-
-        private void deleted(object sender, EventArgs e)
-        {
-            if (cur == null)
-                return;
-
-            Figure fig = FiguresList.Instance.byName(cur.Label);
-
-            if (fig == null)
-            {
-                clearAll();
-                Modify_SearchInput.Text = "";
-            }
-        }
-
-        private void clearAll()
-        {
-            previousArea = null;
-            previousColor = null;
-            previousPoint = null;
-            cur = null;
-
-
-            Modify_CoordsXInput.Text = "";
-            Modify_CoordsYInput.Text = "";
-            Modify_AreaInput.Text = "";
-            Modify_ColorInput.Text = "";
-        }
-
-        private void Add_NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Add_AreaInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Modify_UndoButton_Click(object sender, EventArgs e)
-        {
-            if (previousArea == null)
-                return;
-
-            Modify_ColorInput.Text = previousColor;
-            Modify_AreaInput.Text = previousArea.ToString();
-            Modify_CoordsXInput.Text = previousPoint.X.ToString();
-            Modify_CoordsYInput.Text = previousPoint.Y.ToString();
-        }
-
-        private void Modify_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _instance = null;
-        }
-
-        private void Modify_SearchButton_Click(object sender, EventArgs e)
-        {
-            string name = Modify_SearchInput.Text;
-            Figure fig = FiguresList.Instance.byName(name);
-
-            clearAll();
-            if (fig == null)
-                return;
-
             cur = fig;
+            FillInputs();
+        }
 
-            int x = fig.Coords.X;
-            int y = fig.Coords.Y;
-            int area = fig.Area;
-            string label = fig.Label;
-            string color = fig.Color;
+        private void FillInputs()
+        {
+            int x = cur.Coords.X;
+            int y = cur.Coords.Y;
+            int area = cur.Area;
+            string label = cur.Label;
+            string color = cur.Color;
 
+            Modify_NameInput.Text = label;
             Modify_CoordsXInput.Text = x.ToString();
             Modify_CoordsYInput.Text = y.ToString();
             Modify_AreaInput.Text = area.ToString();
             Modify_ColorInput.Text = color;
-
-            previousColor = color;
-            previousPoint = new Point(x, y);
-            previousArea = area;
         }
+
+        private void Modify_UndoButton_Click(object sender, EventArgs e)
+        {
+            Modify_NameInput.Text = cur.Label;
+            Modify_ColorInput.Text = cur.Color;
+            Modify_AreaInput.Text = cur.Area.ToString();
+            Modify_CoordsXInput.Text = cur.Coords.X.ToString();
+            Modify_CoordsYInput.Text = cur.Coords.Y.ToString();
+        }
+
 
         private void Modify_ModifyButton_Click(object sender, EventArgs e)
         {
-            if (cur == null)
-                return;
-
+            cur.Label = Modify_NameInput.Text;
             cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
             cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
             cur.Area = int.Parse(Modify_AreaInput.Text);
@@ -138,6 +63,79 @@ namespace PAIN___Figury_geometryczne
 
             if (FigureModified != null)
                 FigureModified(this, new FigureEventArgs(cur));
+
+            Close();
+        }
+
+        private void Modify_NameInput_Validated(object sender, EventArgs e)
+        {
+            Modify_ErrorProvider.SetError(Modify_NameInput, "");
+        }
+
+        private void Modify_NameInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateLabel(Modify_NameInput.Text))
+            {
+                Modify_ErrorProvider.SetError(Modify_NameInput, "Label cannot be empty.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Modify_AreaInput_Validated(object sender, EventArgs e)
+        {
+            Modify_ErrorProvider.SetError(Modify_AreaInput, "");
+        }
+
+        private void Modify_AreaInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateArea(Modify_AreaInput.Text))
+            {
+                Modify_ErrorProvider.SetError(Modify_AreaInput, "Must be a integer, greater than 0.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Modify_ColorInput_Validated(object sender, EventArgs e)
+        {
+            Modify_ErrorProvider.SetError(Modify_ColorInput, "");
+        }
+
+        private void Modify_ColorInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateColor(Modify_ColorInput.Text))
+            {
+                Modify_ErrorProvider.SetError(Modify_ColorInput, "Must be a HEX color format.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Modify_CoordsXInput_Validated(object sender, EventArgs e)
+        {
+            Modify_ErrorProvider.SetError(Modify_CoordsXInput, "");
+
+        }
+
+        private void Modify_CoordsXInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateCoord(Modify_CoordsXInput.Text))
+            {
+                Modify_ErrorProvider.SetError(Modify_CoordsXInput, "Must be a integer.");
+                e.Cancel = true;
+            }
+        }
+
+        private void Modify_CoordsYInput_Validated(object sender, EventArgs e)
+        {
+            Modify_ErrorProvider.SetError(Modify_CoordsYInput, "");
+        }
+
+        private void Modify_CoordsYInput_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Figure.ValidateCoord(Modify_CoordsYInput.Text))
+            {
+                Modify_ErrorProvider.SetError(Modify_CoordsYInput, "Must be a integer.");
+                e.Cancel = true;
+            }
         }
     }
 }

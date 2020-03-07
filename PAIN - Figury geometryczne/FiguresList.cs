@@ -38,15 +38,6 @@ namespace PAIN___Figury_geometryczne
             return true;
         }
 
-        public bool delete(string name)
-        {
-            Figure result = byName(name);
-            if (result == null)
-                return false;
-
-            return _Figures.Remove(result);
-        }
-
         public bool delete(Figure fig)
         {
             return _Figures.Remove(fig);

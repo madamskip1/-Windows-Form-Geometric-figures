@@ -13,7 +13,6 @@ C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Fi
 C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.List.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csprojAssemblyReference.cache
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Add.resources
-C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Delete.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.List.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.MainForm.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Modify.resources

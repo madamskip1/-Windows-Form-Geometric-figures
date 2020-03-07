@@ -53,12 +53,6 @@
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Circle.cs" />
-    <Compile Include="Delete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Delete.Designer.cs">
-      <DependentUpon>Delete.cs</DependentUpon>
-    </Compile>
     <Compile Include="Figure.cs" />
     <Compile Include="FigureEventArgs.cs" />
     <Compile Include="FiguresList.cs" />
@@ -87,9 +81,6 @@
     <Compile Include="Triangle.cs" />
     <EmbeddedResource Include="Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Delete.resx">
-      <DependentUpon>Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List.resx">
       <DependentUpon>List.cs</DependentUpon>

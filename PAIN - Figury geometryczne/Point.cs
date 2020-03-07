@@ -8,19 +8,17 @@ namespace PAIN___Figury_geometryczne
 {
     public class Point
     {
-        private int _x;
-        private int _y;
 
         public Point()
         {
-            this._x = 0;
-            this._y = 0;
+            X = 0;
+            Y = 0;
         }
 
         public Point(int _x, int _y)
         {
-            this._x = _x;
-            this._y = _y;
+            X = _x;
+            Y = _y;
         }
 
         public int X
