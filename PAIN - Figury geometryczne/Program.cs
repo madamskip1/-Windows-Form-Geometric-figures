@@ -20,7 +20,7 @@ namespace PAIN___Figury_geometryczne
             Figure fig3 = new Circle();
 
             fig1.Label = "Test1";
-            fig1.Color = "#11111";
+            fig1.Color = "#111111";
             fig1.Coords = new Point(1, 2);
             fig1.Area = 10;
 
@@ -30,13 +30,13 @@ namespace PAIN___Figury_geometryczne
             fig2.Area = 20;
 
             fig3.Label = "Test3";
-            fig3.Color = "#33333";
+            fig3.Color = "#333333";
             fig3.Coords = new Point(5, 6);
             fig3.Area = 30;
 
-            list.add(fig1);
-            list.add(fig2);
-            list.add(fig3);
+            list.Add(fig1);
+            list.Add(fig2);
+            list.Add(fig3);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

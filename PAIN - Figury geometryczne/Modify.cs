@@ -15,7 +15,7 @@ namespace PAIN___Figury_geometryczne
         public static event EventHandler<FigureEventArgs> FigureModified;
 
         private Figure cur;
-
+        private Figure drawingFigure;
 
         public Modify()
         {
@@ -25,6 +25,16 @@ namespace PAIN___Figury_geometryczne
         public Modify(Figure fig) : this()
         {
             cur = fig;
+
+            if (cur.Shape == Figure.Shapes.CIRCLE)
+                drawingFigure = new Circle();
+            else if (cur.Shape == Figure.Shapes.TRIANGLE)
+                drawingFigure = new Triangle();
+            else if (cur.Shape == Figure.Shapes.SQUARE)
+                drawingFigure = new Square();
+
+            drawingFigure.Color = cur.Color;
+            
             FillInputs();
         }
 
@@ -55,14 +65,29 @@ namespace PAIN___Figury_geometryczne
 
         private void Modify_ModifyButton_Click(object sender, EventArgs e)
         {
-            cur.Label = Modify_NameInput.Text;
-            cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
-            cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
-            cur.Area = int.Parse(Modify_AreaInput.Text);
-            cur.Color = Modify_ColorInput.Text;
+            FigureEventArgs args;
+            if(cur.Shape != drawingFigure.Shape)
+            {
+                drawingFigure.Label = Modify_NameInput.Text;
+                drawingFigure.Coords.X = int.Parse(Modify_CoordsXInput.Text);
+                drawingFigure.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
+                drawingFigure.Area = int.Parse(Modify_AreaInput.Text);
+                drawingFigure.Color = Modify_ColorInput.Text;
+                args = new FigureEventArgs(drawingFigure, cur);
+            }
+            else
+            {
+                cur.Label = Modify_NameInput.Text;
+                cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
+                cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
+                cur.Area = int.Parse(Modify_AreaInput.Text);
+                cur.Color = Modify_ColorInput.Text;
+                args = new FigureEventArgs(cur);
+            }
+
 
             if (FigureModified != null)
-                FigureModified(this, new FigureEventArgs(cur));
+                FigureModified(this, args);
 
             Close();
         }
@@ -136,6 +161,33 @@ namespace PAIN___Figury_geometryczne
                 Modify_ErrorProvider.SetError(Modify_CoordsYInput, "Must be a integer.");
                 e.Cancel = true;
             }
+        }
+
+        private void Modify_Draw_Paint(object sender, PaintEventArgs e)
+        {
+
+            drawingFigure.Draw(e.Graphics);
+        }
+
+        private void Modify_ColorInput_TextChanged(object sender, EventArgs e)
+        {
+            if (Figure.ValidateColor(Modify_ColorInput.Text))
+                drawingFigure.Color = Modify_ColorInput.Text;
+            Refresh();
+        }
+
+        private void Modify_Draw_Click(object sender, EventArgs e)
+        {
+            if (drawingFigure.Shape == Figure.Shapes.CIRCLE)
+                drawingFigure = new Square();
+            else if (drawingFigure.Shape == Figure.Shapes.SQUARE)
+                drawingFigure = new Triangle();
+            else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
+                drawingFigure = new Circle();
+
+            drawingFigure.Color = cur.Color;
+
+            Modify_ColorInput_TextChanged(this, null);
         }
     }
 }

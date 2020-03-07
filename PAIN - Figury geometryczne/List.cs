@@ -48,7 +48,7 @@ namespace PAIN___Figury_geometryczne
             {
                 if(View_List.SelectedItems.Count > 0)
                 {
-                    FiguresList.Instance.delete((Figure)View_List.SelectedItems[0].Tag);
+                    FiguresList.Instance.Delete((Figure)View_List.SelectedItems[0].Tag);
                     //View_List.SelectedItems[0].Remove();
                     //UpdateStatusBar();
                     if (DeleteEvent != null)
@@ -59,7 +59,7 @@ namespace PAIN___Figury_geometryczne
 
         private void ModifyButtonClicked(object sender, EventArgs e)
         {
-            if (MdiParent.ActiveMdiChild != null && MdiParent.ActiveMdiChild == this)
+            if (MdiParent != null && MdiParent.ActiveMdiChild != null && MdiParent.ActiveMdiChild == this)
             {
                 if (View_List.SelectedItems.Count > 0)
                 {
@@ -70,16 +70,16 @@ namespace PAIN___Figury_geometryczne
 
         private void FigureAdded(object sender, FigureEventArgs e)
         {
-            if(CheckFiltr(e.figure, GetFiltr()))
+            if(CheckFiltr(e.Figure, GetFiltr()))
             {
-                View_List.Items.Add(PrepareViewitem(e.figure));
+                View_List.Items.Add(PrepareViewitem(e.Figure));
                 UpdateStatusBar();
             }
         }
 
         private void FigureDeleted(object sender, FigureEventArgs e)
         {
-            ListViewItem item = SearchFigure(e.figure);
+            ListViewItem item = SearchFigure(e.Figure);
             if (item != null)
             {
                 item.Remove();
@@ -89,10 +89,11 @@ namespace PAIN___Figury_geometryczne
 
         private void FigureModified(object sender, FigureEventArgs e)
         {
-            ListViewItem item = SearchFigure(e.figure);
+
+            ListViewItem item = (e.Previous == null) ? SearchFigure(e.Figure) : SearchFigure(e.Previous);
             if (item != null)
             {
-                if (!CheckFiltr(e.figure, GetFiltr()))
+                if (!CheckFiltr(e.Figure, GetFiltr()))
                 {
                     item.Remove();
                     UpdateStatusBar();
@@ -100,13 +101,16 @@ namespace PAIN___Figury_geometryczne
                 else
                 {
                     item.SubItems.Clear();
-                    item.Text = e.figure.Label;
-                    string coords = "(" + e.figure.Coords.X + ", " + e.figure.Coords.Y + ")";
+                    item.Text = e.Figure.Label;
+                    string coords = "(" + e.Figure.Coords.X + ", " + e.Figure.Coords.Y + ")";
                     item.SubItems.Add(coords);
-                    item.SubItems.Add(e.figure.Area.ToString());
-                    item.SubItems.Add(e.figure.Color);
-                    item.SubItems.Add(e.figure.ShapeName());
-                    item.Tag = e.figure;
+                    item.SubItems.Add(e.Figure.Area.ToString());
+                    item.SubItems.Add(e.Figure.Color);
+                    item.SubItems.Add(e.Figure.ShapeName());
+                    item.Tag = e.Figure;
+
+                    if (e.Previous != null)
+                        FiguresList.Instance.Update(e.Previous, e.Figure);
                 }
             }
             else

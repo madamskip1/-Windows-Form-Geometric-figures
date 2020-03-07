@@ -32,22 +32,61 @@ namespace PAIN___Figury_geometryczne
             }
         }
 
-        public bool add(Figure figure)
+        public bool Add(Figure figure)
         {
             this._Figures.Add(figure);
             return true;
         }
 
-        public bool delete(Figure fig)
+        public bool Delete(Figure fig)
         {
             return _Figures.Remove(fig);
         }
 
-        public Figure byName(string name)
+        public void Update(Figure prev, Figure newF)
+        {
+            int at = IndexByRef(prev);
+            if (at < 0)
+                return;
+
+            Figures[at] = newF;
+        }
+
+        public Figure ByName(string name)
         {
             Figure result = _Figures.Find(x => x.Label == name);
 
             return result;
+        }
+
+        public Figure ByRef(Figure fig)
+        {
+            int at = 0;
+            foreach(Figure item in Figures)
+            {
+                if (item == fig)
+                    break;
+
+                at++;
+            }
+
+            
+            return Figures[at];
+        }
+
+        public int IndexByRef(Figure fig)
+        {
+            int at = 0;
+
+            foreach(Figure item in Figures)
+            {
+                if (item == fig)
+                    return at;
+
+                at++;
+            }
+
+            return -1;
         }
     }
 }

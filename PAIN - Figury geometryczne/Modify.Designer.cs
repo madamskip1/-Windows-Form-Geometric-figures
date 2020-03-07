@@ -49,6 +49,7 @@
             this.Modify_CoordsXLabel = new System.Windows.Forms.Label();
             this.Modify_SearchLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Modify_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Modify_Draw = new System.Windows.Forms.Panel();
             this.Modify_AreaLayout.SuspendLayout();
             this.Modify_ButtonsLayout.SuspendLayout();
             this.Modify_ColorLayout.SuspendLayout();
@@ -192,6 +193,7 @@
             this.Modify_ColorInput.Name = "Modify_ColorInput";
             this.Modify_ColorInput.Size = new System.Drawing.Size(132, 22);
             this.Modify_ColorInput.TabIndex = 1;
+            this.Modify_ColorInput.TextChanged += new System.EventHandler(this.Modify_ColorInput_TextChanged);
             this.Modify_ColorInput.Validating += new System.ComponentModel.CancelEventHandler(this.Modify_ColorInput_Validating);
             this.Modify_ColorInput.Validated += new System.EventHandler(this.Modify_ColorInput_Validated);
             // 
@@ -303,11 +305,21 @@
             // 
             this.Modify_ErrorProvider.ContainerControl = this;
             // 
+            // Modify_Draw
+            // 
+            this.Modify_Draw.Location = new System.Drawing.Point(359, 64);
+            this.Modify_Draw.Name = "Modify_Draw";
+            this.Modify_Draw.Size = new System.Drawing.Size(200, 200);
+            this.Modify_Draw.TabIndex = 5;
+            this.Modify_Draw.Click += new System.EventHandler(this.Modify_Draw_Click);
+            this.Modify_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.Modify_Draw_Paint);
+            // 
             // Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 330);
+            this.ClientSize = new System.Drawing.Size(594, 330);
+            this.Controls.Add(this.Modify_Draw);
             this.Controls.Add(this.Modify_SearchLayout);
             this.Controls.Add(this.Modify_AreaLayout);
             this.Controls.Add(this.Modify_ButtonsLayout);
@@ -353,5 +365,6 @@
         private System.Windows.Forms.Label Modify_CoordsXLabel;
         private System.Windows.Forms.TableLayoutPanel Modify_SearchLayout;
         private System.Windows.Forms.ErrorProvider Modify_ErrorProvider;
+        private System.Windows.Forms.Panel Modify_Draw;
     }
 }

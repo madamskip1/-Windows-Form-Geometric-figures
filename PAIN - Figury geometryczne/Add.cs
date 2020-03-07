@@ -15,6 +15,7 @@ namespace PAIN___Figury_geometryczne
         public event EventHandler<FigureEventArgs> NewFigureAdded;
 
         private static Add _instance;
+        private Figure drawingFigure;
 
         public static Add Instance
         {
@@ -29,15 +30,18 @@ namespace PAIN___Figury_geometryczne
         public Add()
         {
             InitializeComponent();
+            Add_ClearButton_Click(this, null);
         }
 
         private void Add_ClearButton_Click(object sender, EventArgs e)
         {
+            drawingFigure = new Triangle();
             Add_CoordsXInput.Clear();
             Add_CoordsYInput.Clear();
             Add_ColorInput.Clear();
             Add_AreaInput.Clear();
             Add_NameInput.Clear();
+            Refresh();
         }
 
         private void Add_AddButton_Click(object sender, EventArgs e)
@@ -69,16 +73,17 @@ namespace PAIN___Figury_geometryczne
 
             FiguresList figures = FiguresList.Instance;
 
-            Figure figure = new Triangle();
-            figure.Area = area;
-            figure.Coords = new Point(x, y);
-            figure.Color = color;
-            figure.Label = name;
+            //Figure figure = new Triangle();
 
-            figures.add(figure);
+            drawingFigure.Area = area;
+            drawingFigure.Coords = new Point(x, y);
+            drawingFigure.Color = color;
+            drawingFigure.Label = name;
+
+            figures.Add(drawingFigure);
 
             if (NewFigureAdded != null)
-                NewFigureAdded(this, new FigureEventArgs(figure));
+                NewFigureAdded(this, new FigureEventArgs(drawingFigure));
 
             Close();
         }
@@ -156,6 +161,34 @@ namespace PAIN___Figury_geometryczne
         private void Add_NameInput_Validated(object sender, EventArgs e)
         {
             Add_ErrorProvider.SetError(Add_NameInput, "");
+        }
+
+        private void Add_Draw_Paint(object sender, PaintEventArgs e)
+        {
+            drawingFigure.Draw(e.Graphics);
+        }
+
+        private void Add_Draw_Click(object sender, EventArgs e)
+        {
+            string color = drawingFigure.Color;
+
+            if (drawingFigure.Shape == Figure.Shapes.CIRCLE)
+                drawingFigure = new Square();
+            else if (drawingFigure.Shape == Figure.Shapes.SQUARE)
+                drawingFigure = new Triangle();
+            else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
+                drawingFigure = new Circle();
+
+            drawingFigure.Color = color;
+
+            Add_ColorInput_TextChanged(this, null);
+        }
+
+        private void Add_ColorInput_TextChanged(object sender, EventArgs e)
+        {
+            if (Figure.ValidateColor(Add_ColorInput.Text))
+                drawingFigure.Color = Add_ColorInput.Text;
+            Refresh();
         }
     }
 }

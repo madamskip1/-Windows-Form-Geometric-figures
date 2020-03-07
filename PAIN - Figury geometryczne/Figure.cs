@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,11 +10,21 @@ namespace PAIN___Figury_geometryczne
 {
     public abstract class Figure
     {
+        public enum Shapes { CIRCLE, TRIANGLE, SQUARE}
         public Figure()
         {
+            Coords = new Point();
+            Color = "#000000";
         }
         public abstract string ShapeName();
+        public abstract void Draw(Graphics graphics);
 
+        public Shapes Shape
+        {
+            get;
+            set;
+        }
+        
         public string Color
         {
             get;

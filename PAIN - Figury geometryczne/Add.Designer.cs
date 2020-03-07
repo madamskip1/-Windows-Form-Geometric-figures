@@ -49,6 +49,7 @@
             this.Add_NameLabel = new System.Windows.Forms.Label();
             this.Add_NameInput = new System.Windows.Forms.TextBox();
             this.Add_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Add_Draw = new System.Windows.Forms.Panel();
             this.Add_CoordsLayout.SuspendLayout();
             this.Add_CoordsLayoutInput.SuspendLayout();
             this.Add_ColorLayout.SuspendLayout();
@@ -181,6 +182,7 @@
             this.Add_ColorInput.Name = "Add_ColorInput";
             this.Add_ColorInput.Size = new System.Drawing.Size(132, 22);
             this.Add_ColorInput.TabIndex = 0;
+            this.Add_ColorInput.TextChanged += new System.EventHandler(this.Add_ColorInput_TextChanged);
             this.Add_ColorInput.Validating += new System.ComponentModel.CancelEventHandler(this.Add_ColorInput_Validating);
             this.Add_ColorInput.Validated += new System.EventHandler(this.Add_ColorInput_Validated);
             // 
@@ -303,11 +305,21 @@
             // 
             this.Add_ErrorProvider.ContainerControl = this;
             // 
+            // Add_Draw
+            // 
+            this.Add_Draw.Location = new System.Drawing.Point(344, 59);
+            this.Add_Draw.Name = "Add_Draw";
+            this.Add_Draw.Size = new System.Drawing.Size(200, 200);
+            this.Add_Draw.TabIndex = 6;
+            this.Add_Draw.Click += new System.EventHandler(this.Add_Draw_Click);
+            this.Add_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.Add_Draw_Paint);
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 334);
+            this.ClientSize = new System.Drawing.Size(573, 334);
+            this.Controls.Add(this.Add_Draw);
             this.Controls.Add(this.Add_NameLayout);
             this.Controls.Add(this.Add_AreaLayout);
             this.Controls.Add(this.Add_ButtonsLayout);
@@ -354,5 +366,6 @@
         private System.Windows.Forms.Label Add_NameLabel;
         private System.Windows.Forms.TextBox Add_NameInput;
         private System.Windows.Forms.ErrorProvider Add_ErrorProvider;
+        private System.Windows.Forms.Panel Add_Draw;
     }
 }
