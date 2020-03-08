@@ -61,49 +61,65 @@
             // 
             // MainButtons_NewView
             // 
+            this.MainButtons_NewView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainButtons_NewView.Image = global::PAIN___Figury_geometryczne.Properties.Resources.show;
             this.MainButtons_NewView.Location = new System.Drawing.Point(23, 13);
             this.MainButtons_NewView.Margin = new System.Windows.Forms.Padding(4);
             this.MainButtons_NewView.Name = "MainButtons_NewView";
-            this.MainButtons_NewView.Size = new System.Drawing.Size(200, 62);
+            this.MainButtons_NewView.Size = new System.Drawing.Size(200, 85);
             this.MainButtons_NewView.TabIndex = 3;
             this.MainButtons_NewView.TabStop = false;
             this.MainButtons_NewView.Text = "New View";
+            this.MainButtons_NewView.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MainButtons_NewView.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MainButtons_NewView.UseVisualStyleBackColor = true;
             this.MainButtons_NewView.Click += new System.EventHandler(this.MainButtons_New_View_Click);
             // 
             // MainButtons_Delete
             // 
-            this.MainButtons_Delete.Location = new System.Drawing.Point(23, 342);
+            this.MainButtons_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainButtons_Delete.Image = global::PAIN___Figury_geometryczne.Properties.Resources.delete;
+            this.MainButtons_Delete.Location = new System.Drawing.Point(23, 366);
             this.MainButtons_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.MainButtons_Delete.Name = "MainButtons_Delete";
-            this.MainButtons_Delete.Size = new System.Drawing.Size(200, 62);
+            this.MainButtons_Delete.Size = new System.Drawing.Size(200, 85);
             this.MainButtons_Delete.TabIndex = 2;
             this.MainButtons_Delete.TabStop = false;
             this.MainButtons_Delete.Text = "Delete";
+            this.MainButtons_Delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MainButtons_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MainButtons_Delete.UseVisualStyleBackColor = true;
             this.MainButtons_Delete.Click += new System.EventHandler(this.MainButtons_Delete_Click);
             // 
             // MainButtons_Modify
             // 
+            this.MainButtons_Modify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainButtons_Modify.Image = global::PAIN___Figury_geometryczne.Properties.Resources.edit;
             this.MainButtons_Modify.Location = new System.Drawing.Point(23, 273);
             this.MainButtons_Modify.Margin = new System.Windows.Forms.Padding(4);
             this.MainButtons_Modify.Name = "MainButtons_Modify";
-            this.MainButtons_Modify.Size = new System.Drawing.Size(200, 62);
+            this.MainButtons_Modify.Size = new System.Drawing.Size(200, 85);
             this.MainButtons_Modify.TabIndex = 1;
             this.MainButtons_Modify.TabStop = false;
             this.MainButtons_Modify.Text = "Modify";
+            this.MainButtons_Modify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MainButtons_Modify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MainButtons_Modify.UseVisualStyleBackColor = true;
             this.MainButtons_Modify.Click += new System.EventHandler(this.MainButtons_Modify_Click);
             // 
             // MainButtons_Add
             // 
-            this.MainButtons_Add.Location = new System.Drawing.Point(23, 204);
+            this.MainButtons_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MainButtons_Add.Image = global::PAIN___Figury_geometryczne.Properties.Resources.plus;
+            this.MainButtons_Add.Location = new System.Drawing.Point(23, 178);
             this.MainButtons_Add.Margin = new System.Windows.Forms.Padding(4);
             this.MainButtons_Add.Name = "MainButtons_Add";
-            this.MainButtons_Add.Size = new System.Drawing.Size(200, 62);
+            this.MainButtons_Add.Size = new System.Drawing.Size(200, 87);
             this.MainButtons_Add.TabIndex = 0;
             this.MainButtons_Add.TabStop = false;
             this.MainButtons_Add.Text = "Add";
+            this.MainButtons_Add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MainButtons_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MainButtons_Add.UseVisualStyleBackColor = true;
             this.MainButtons_Add.Click += new System.EventHandler(this.MainButtons_Add_Click);
             // 

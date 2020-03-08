@@ -56,11 +56,11 @@
             this.View_Shape});
             this.View_List.FullRowSelect = true;
             this.View_List.HideSelection = false;
-            this.View_List.Location = new System.Drawing.Point(40, 122);
+            this.View_List.Location = new System.Drawing.Point(2, 68);
             this.View_List.Margin = new System.Windows.Forms.Padding(4);
             this.View_List.MultiSelect = false;
             this.View_List.Name = "View_List";
-            this.View_List.Size = new System.Drawing.Size(457, 270);
+            this.View_List.Size = new System.Drawing.Size(459, 315);
             this.View_List.TabIndex = 0;
             this.View_List.UseCompatibleStateImageBehavior = false;
             this.View_List.View = System.Windows.Forms.View.Details;
@@ -68,28 +68,29 @@
             // View_Name
             // 
             this.View_Name.Text = "Label";
-            this.View_Name.Width = 70;
+            this.View_Name.Width = 80;
             // 
             // View_Coords
             // 
             this.View_Coords.Text = "Coords";
-            this.View_Coords.Width = 70;
+            this.View_Coords.Width = 80;
             // 
             // View_Area
             // 
             this.View_Area.DisplayIndex = 3;
             this.View_Area.Text = "Area";
-            this.View_Area.Width = 70;
+            this.View_Area.Width = 80;
             // 
             // View_Color
             // 
             this.View_Color.DisplayIndex = 2;
             this.View_Color.Text = "Color";
-            this.View_Color.Width = 70;
+            this.View_Color.Width = 80;
             // 
             // View_Shape
             // 
             this.View_Shape.Text = "Shape";
+            this.View_Shape.Width = 80;
             // 
             // panel1
             // 
@@ -97,10 +98,10 @@
             this.panel1.Controls.Add(this.Filtr_Greater);
             this.panel1.Controls.Add(this.Filtr_Less);
             this.panel1.Controls.Add(this.Filtr_All);
-            this.panel1.Location = new System.Drawing.Point(40, 15);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(459, 73);
+            this.panel1.Size = new System.Drawing.Size(459, 58);
             this.panel1.TabIndex = 1;
             // 
             // Filtr_Button
@@ -179,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 492);
+            this.ClientSize = new System.Drawing.Size(462, 387);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.View_List);
