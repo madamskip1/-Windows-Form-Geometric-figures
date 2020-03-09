@@ -46,50 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add.cs">
+    <Compile Include="Controller\AddDialogController.cs" />
+    <Compile Include="Controller\FiguresListViewController.cs" />
+    <Compile Include="View\AddDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
+    <Compile Include="View\AddDialog.Designer.cs">
+      <DependentUpon>AddDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Circle.cs" />
-    <Compile Include="Figure.cs" />
-    <Compile Include="FigureEventArgs.cs" />
-    <Compile Include="FiguresList.cs" />
-    <Compile Include="List.cs">
+    <Compile Include="Model\Circle.cs" />
+    <Compile Include="Model\Figure.cs" />
+    <Compile Include="Model\FigureEventArgs.cs" />
+    <Compile Include="Model\Figures.cs" />
+    <Compile Include="View\FiguresListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
+    <Compile Include="View\FiguresListView.Designer.cs">
+      <DependentUpon>FiguresListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modify.cs">
+    <Compile Include="View\ModifyDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modify.Designer.cs">
-      <DependentUpon>Modify.cs</DependentUpon>
+    <Compile Include="View\ModifyDialog.Designer.cs">
+      <DependentUpon>ModifyDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Point.cs" />
+    <Compile Include="Model\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="Triangle.cs" />
-    <EmbeddedResource Include="Add.resx">
-      <DependentUpon>Add.cs</DependentUpon>
+    <Compile Include="Model\Square.cs" />
+    <Compile Include="Model\Triangle.cs" />
+    <EmbeddedResource Include="View\AddDialog.resx">
+      <DependentUpon>AddDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="List.resx">
-      <DependentUpon>List.cs</DependentUpon>
+    <EmbeddedResource Include="View\FiguresListView.resx">
+      <DependentUpon>FiguresListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modify.resx">
-      <DependentUpon>Modify.cs</DependentUpon>
+    <EmbeddedResource Include="View\ModifyDialog.resx">
+      <DependentUpon>ModifyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,5 +128,6 @@
   <ItemGroup>
     <None Include="Resources\show.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,10 +12,7 @@ C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Fi
 C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Delete.resources
 C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.List.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csprojAssemblyReference.cache
-C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Add.resources
-C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.List.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.MainForm.resources
-C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Modify.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.Properties.Resources.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csproj.GenerateResource.cache
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.exe
@@ -23,3 +20,6 @@ C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.exe.config
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.exe
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\bin\Debug\PAIN - Figury geometryczne.pdb
+C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.AddDialog.resources
+C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.ModifyDialog.resources
+C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.FiguresListView.resources
