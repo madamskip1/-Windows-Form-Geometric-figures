@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\AddDialogController.cs" />
     <Compile Include="Controller\FiguresListViewController.cs" />
+    <Compile Include="Controller\ModifyDialogController.cs" />
     <Compile Include="View\AddDialog.cs">
       <SubType>Form</SubType>
     </Compile>

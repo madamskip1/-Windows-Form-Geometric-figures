@@ -328,7 +328,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Add";
             this.Text = "Add";
-            this.Activated += new System.EventHandler(this.Add_Activated);
             this.Add_CoordsLayout.ResumeLayout(false);
             this.Add_CoordsLayout.PerformLayout();
             this.Add_CoordsLayoutInput.ResumeLayout(false);

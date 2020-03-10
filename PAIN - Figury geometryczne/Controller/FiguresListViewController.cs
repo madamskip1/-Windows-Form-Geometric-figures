@@ -17,16 +17,18 @@ namespace PAIN___Figury_geometryczne.Controller
 
         public void AddClicked()
         {
-            AddDialog addDialog = new AddDialog();
-            addDialog.SetController(this);
-            addDialog.Show();
+            AddDialogController addDialogController = new AddDialogController();
+            addDialogController.SetFigures(figures);
+            addDialogController.RunModal();
+            
         }
 
         public void ModifyClicked(Figure fig)
         {
-            ModifyDialog modifyDialog = new ModifyDialog(fig);
-            modifyDialog.SetController(this);
-            modifyDialog.Show();
+            ModifyDialogController modifyDialogController = new ModifyDialogController();
+            modifyDialogController.SetFigures(figures);
+            modifyDialogController.SetFigure(fig);
+            modifyDialogController.RunModal();
         }
 
         public void DeleteClicked(Figure fig)
@@ -34,18 +36,8 @@ namespace PAIN___Figury_geometryczne.Controller
             figures.Delete(fig);
         }
 
-        public void AddFigure(Figure fig)
-        {
-            figures.Add(fig);
 
-        }
 
-        public void FigureModified(Figure figCur, Figure newFig)
-        {
-            if (newFig == null)
-                newFig = figCur;
 
-            figures.Update(figCur, newFig);
-        }
     }
 }

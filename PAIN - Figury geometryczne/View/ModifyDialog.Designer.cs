@@ -35,7 +35,7 @@
             this.Modify_AreaLabel = new System.Windows.Forms.Label();
             this.Modify_AreaInput = new System.Windows.Forms.TextBox();
             this.Modify_ButtonsLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.Modify_UndoButton = new System.Windows.Forms.Button();
+            this.Modify_Cancel = new System.Windows.Forms.Button();
             this.Modify_ModifyButton = new System.Windows.Forms.Button();
             this.Modify_ColorLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Modify_ColorLabel = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.Modify_ButtonsLayout.ColumnCount = 2;
             this.Modify_ButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Modify_ButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Modify_ButtonsLayout.Controls.Add(this.Modify_UndoButton, 1, 0);
+            this.Modify_ButtonsLayout.Controls.Add(this.Modify_Cancel, 1, 0);
             this.Modify_ButtonsLayout.Controls.Add(this.Modify_ModifyButton, 0, 0);
             this.Modify_ButtonsLayout.Location = new System.Drawing.Point(26, 277);
             this.Modify_ButtonsLayout.Margin = new System.Windows.Forms.Padding(4);
@@ -134,18 +134,18 @@
             this.Modify_ButtonsLayout.Size = new System.Drawing.Size(267, 44);
             this.Modify_ButtonsLayout.TabIndex = 4;
             // 
-            // Modify_UndoButton
+            // Modify_Cancel
             // 
-            this.Modify_UndoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Modify_UndoButton.Location = new System.Drawing.Point(150, 4);
-            this.Modify_UndoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.Modify_UndoButton.Name = "Modify_UndoButton";
-            this.Modify_UndoButton.Size = new System.Drawing.Size(100, 36);
-            this.Modify_UndoButton.TabIndex = 1;
-            this.Modify_UndoButton.Text = "Undo";
-            this.Modify_UndoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Modify_UndoButton.UseVisualStyleBackColor = true;
-            this.Modify_UndoButton.Click += new System.EventHandler(this.Modify_UndoButton_Click);
+            this.Modify_Cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Modify_Cancel.Location = new System.Drawing.Point(150, 4);
+            this.Modify_Cancel.Margin = new System.Windows.Forms.Padding(4);
+            this.Modify_Cancel.Name = "Modify_Cancel";
+            this.Modify_Cancel.Size = new System.Drawing.Size(100, 36);
+            this.Modify_Cancel.TabIndex = 1;
+            this.Modify_Cancel.Text = "Cancel";
+            this.Modify_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Modify_Cancel.UseVisualStyleBackColor = true;
+            this.Modify_Cancel.Click += new System.EventHandler(this.Modify_CancelButton_Click);
             // 
             // Modify_ModifyButton
             // 
@@ -314,7 +314,7 @@
             this.Modify_Draw.Click += new System.EventHandler(this.Modify_Draw_Click);
             this.Modify_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.Modify_Draw_Paint);
             // 
-            // Modify
+            // ModifyDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -326,7 +326,7 @@
             this.Controls.Add(this.Modify_ColorLayout);
             this.Controls.Add(this.Modify_CoordsLayout);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Modify";
+            this.Name = "ModifyDialog";
             this.Text = "Modify";
             this.Modify_AreaLayout.ResumeLayout(false);
             this.Modify_AreaLayout.PerformLayout();
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Label Modify_AreaLabel;
         private System.Windows.Forms.TextBox Modify_AreaInput;
         private System.Windows.Forms.TableLayoutPanel Modify_ButtonsLayout;
-        private System.Windows.Forms.Button Modify_UndoButton;
+        private System.Windows.Forms.Button Modify_Cancel;
         private System.Windows.Forms.Button Modify_ModifyButton;
         private System.Windows.Forms.TableLayoutPanel Modify_ColorLayout;
         private System.Windows.Forms.Label Modify_ColorLabel;

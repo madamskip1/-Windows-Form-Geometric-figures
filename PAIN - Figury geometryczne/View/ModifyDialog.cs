@@ -12,59 +12,54 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class ModifyDialog : Form
     {
-        public static event EventHandler<FigureEventArgs> FigureModified;
-
         private Figure cur;
         private Figure drawingFigure;
-        private Controller.FiguresListViewController controller;
+        private Controller.ModifyDialogController controller;
+
+        public string CoordX
+        {
+            get { return Modify_CoordsXInput.Text; }
+            set { Modify_CoordsXInput.Text = value; }
+        }
+
+        public string CoordY
+        {
+            get { return Modify_CoordsYInput.Text; }
+            set { Modify_CoordsYInput.Text = value; }
+        }
+
+        public string Area
+        {
+            get { return Modify_AreaInput.Text; }
+            set { Modify_AreaInput.Text = value; }
+        }
+
+        public string Color
+        {
+            get { return Modify_ColorInput.Text; }
+            set { Modify_ColorInput.Text = value; }
+        }
+
+        public string Label
+        {
+            get { return Modify_NameInput.Text; }
+            set { Modify_NameInput.Text = value; }
+        }
+
+        public Figure.Shapes Shape { get; set; }
+
+        private Figure DrawingFigure;
+
         public ModifyDialog()
         {
             InitializeComponent();
+            CreateDrawingFigure();
         }
 
-        public ModifyDialog(Figure fig) : this()
-        {
-            cur = fig;
 
-            if (cur.Shape == Figure.Shapes.CIRCLE)
-                drawingFigure = new Circle();
-            else if (cur.Shape == Figure.Shapes.TRIANGLE)
-                drawingFigure = new Triangle();
-            else if (cur.Shape == Figure.Shapes.SQUARE)
-                drawingFigure = new Square();
-
-            drawingFigure.Color = cur.Color;
-            
-            FillInputs();
-        }
-
-        public void SetController(Controller.FiguresListViewController ctrl)
+        public void SetController(Controller.ModifyDialogController ctrl)
         {
             controller = ctrl;
-        }
-
-        private void FillInputs()
-        {
-            int x = cur.Coords.X;
-            int y = cur.Coords.Y;
-            int area = cur.Area;
-            string label = cur.Label;
-            string color = cur.Color;
-
-            Modify_NameInput.Text = label;
-            Modify_CoordsXInput.Text = x.ToString();
-            Modify_CoordsYInput.Text = y.ToString();
-            Modify_AreaInput.Text = area.ToString();
-            Modify_ColorInput.Text = color;
-        }
-
-        private void Modify_UndoButton_Click(object sender, EventArgs e)
-        {
-            Modify_NameInput.Text = cur.Label;
-            Modify_ColorInput.Text = cur.Color;
-            Modify_AreaInput.Text = cur.Area.ToString();
-            Modify_CoordsXInput.Text = cur.Coords.X.ToString();
-            Modify_CoordsYInput.Text = cur.Coords.Y.ToString();
         }
 
 
@@ -170,29 +165,55 @@ namespace PAIN___Figury_geometryczne
 
         private void Modify_Draw_Paint(object sender, PaintEventArgs e)
         {
+            if (DrawingFigure == null)
+                CreateDrawingFigure();
 
-            drawingFigure.Draw(e.Graphics);
+            DrawingFigure.Draw(e.Graphics);
         }
 
         private void Modify_ColorInput_TextChanged(object sender, EventArgs e)
         {
-            if (Figure.ValidateColor(Modify_ColorInput.Text))
-                drawingFigure.Color = Modify_ColorInput.Text;
-            Refresh();
+            //if (Figure.ValidateColor(Modify_ColorInput.Text))
+            //    drawingFigure.Color = Modify_ColorInput.Text;
+            //Refresh();
         }
 
         private void Modify_Draw_Click(object sender, EventArgs e)
         {
-            if (drawingFigure.Shape == Figure.Shapes.CIRCLE)
-                drawingFigure = new Square();
-            else if (drawingFigure.Shape == Figure.Shapes.SQUARE)
-                drawingFigure = new Triangle();
-            else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
-                drawingFigure = new Circle();
+            //if (drawingFigure.Shape == Figure.Shapes.CIRCLE)
+            //    drawingFigure = new Square();
+            //else if (drawingFigure.Shape == Figure.Shapes.SQUARE)
+            //    drawingFigure = new Triangle();
+            //else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
+            //    drawingFigure = new Circle();
 
-            drawingFigure.Color = cur.Color;
+            //drawingFigure.Color = cur.Color;
 
-            Modify_ColorInput_TextChanged(this, null);
+            //Modify_ColorInput_TextChanged(this, null);
+        }
+
+        private void Modify_CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void CreateDrawingFigure()
+        {
+            switch(Shape)
+            {
+                case Figure.Shapes.CIRCLE:
+                    DrawingFigure = new Circle();
+                    break;
+                case Figure.Shapes.SQUARE:
+                    DrawingFigure = new Square();
+                    break;
+                case Figure.Shapes.TRIANGLE:
+                    DrawingFigure = new Triangle();
+                    break;
+            }
+
+            DrawingFigure.Color = Color;
+            Refresh();
         }
     }
 }

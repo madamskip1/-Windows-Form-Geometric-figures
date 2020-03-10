@@ -13,11 +13,39 @@ namespace PAIN___Figury_geometryczne
     public partial class AddDialog : Form
     {
         private Figure drawingFigure;
+        private Controller.AddDialogController controller;
 
-        private Figure newFigure;
 
-        private Controller.FiguresListViewController controller;
+        public string CoordX
+        {
+            get { return Add_CoordsXInput.Text; }
+            set { Add_CoordsXInput.Text = value; }
+        }
 
+        public string CoordY
+        {
+            get { return Add_CoordsYInput.Text; }
+            set { Add_CoordsYInput.Text = value; }
+        }
+
+        public string Area
+        {
+            get { return Add_AreaInput.Text; }
+            set { Add_AreaInput.Text = value; }
+        }
+
+        public string Color
+        {
+            get { return Add_ColorInput.Text; }
+            set { Add_ColorInput.Text = value; }
+        }
+
+        public string Label
+        {
+            get { return Add_NameInput.Text; }
+            set { Add_NameInput.Text = value; }
+        }
+            
 
         public AddDialog()
         {
@@ -25,7 +53,7 @@ namespace PAIN___Figury_geometryczne
             Add_ClearButton_Click(this, null);
         }
 
-        public void SetController(Controller.FiguresListViewController ctrl)
+        public void SetController(Controller.AddDialogController ctrl)
         {
             controller = ctrl;
         }
@@ -43,44 +71,8 @@ namespace PAIN___Figury_geometryczne
 
         private void Add_AddButton_Click(object sender, EventArgs e)
         {
-            string name = Add_NameInput.Text;
-            if (String.IsNullOrEmpty(name))
-                return;
-
-            string color = Add_ColorInput.Text;
-            if (String.IsNullOrEmpty(color))
-                return;
-
-            string xText = Add_CoordsXInput.Text;
-            if (String.IsNullOrEmpty(xText))
-                return;
-
-            string yText = Add_CoordsYInput.Text;
-            if (String.IsNullOrEmpty(yText))
-                return;
-
-            string areaText = Add_AreaInput.Text;
-            if (String.IsNullOrEmpty(areaText))
-                return;
-
-
-            int x = int.Parse(xText);
-            int y = int.Parse(yText);
-            int area = int.Parse(areaText);
-
-            drawingFigure.Area = area;
-            drawingFigure.Coords = new Point(x, y);
-            drawingFigure.Color = color;
-            drawingFigure.Label = name;
-
-            controller.AddFigure(drawingFigure);
-
-
-            Close();
-        }
-
-        private void Add_Activated(object sender, EventArgs e)
-        {
+            if (controller.AddFigure())
+                Close();
         }
 
         private void Add_AreaInput_Validating(object sender, CancelEventArgs e)
