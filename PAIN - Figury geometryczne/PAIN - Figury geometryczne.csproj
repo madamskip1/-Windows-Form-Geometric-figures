@@ -55,7 +55,6 @@
     <Compile Include="View\AddDialog.Designer.cs">
       <DependentUpon>AddDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Circle.cs" />
     <Compile Include="Model\Figure.cs" />
     <Compile Include="Model\FigureEventArgs.cs" />
     <Compile Include="Model\Figures.cs" />
@@ -86,8 +85,6 @@
     <Compile Include="Model\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Square.cs" />
-    <Compile Include="Model\Triangle.cs" />
     <EmbeddedResource Include="View\AddDialog.resx">
       <DependentUpon>AddDialog.cs</DependentUpon>
     </EmbeddedResource>

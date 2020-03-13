@@ -49,7 +49,7 @@
             this.Modify_CoordsXLabel = new System.Windows.Forms.Label();
             this.Modify_SearchLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Modify_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Modify_Draw = new System.Windows.Forms.Panel();
+            this.Modify_DrawPanel = new PAIN___Figury_geometryczne.DrawFigure();
             this.Modify_AreaLayout.SuspendLayout();
             this.Modify_ButtonsLayout.SuspendLayout();
             this.Modify_ColorLayout.SuspendLayout();
@@ -74,7 +74,7 @@
             // 
             this.Modify_NameInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_NameInput.Location = new System.Drawing.Point(152, 13);
-            this.Modify_NameInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_NameInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_NameInput.Name = "Modify_NameInput";
             this.Modify_NameInput.Size = new System.Drawing.Size(196, 31);
             this.Modify_NameInput.TabIndex = 1;
@@ -89,7 +89,7 @@
             this.Modify_AreaLayout.Controls.Add(this.Modify_AreaLabel, 0, 0);
             this.Modify_AreaLayout.Controls.Add(this.Modify_AreaInput, 1, 0);
             this.Modify_AreaLayout.Location = new System.Drawing.Point(39, 91);
-            this.Modify_AreaLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_AreaLayout.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_AreaLayout.Name = "Modify_AreaLayout";
             this.Modify_AreaLayout.RowCount = 1;
             this.Modify_AreaLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -112,7 +112,7 @@
             // 
             this.Modify_AreaInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_AreaInput.Location = new System.Drawing.Point(152, 13);
-            this.Modify_AreaInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_AreaInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_AreaInput.Name = "Modify_AreaInput";
             this.Modify_AreaInput.Size = new System.Drawing.Size(196, 31);
             this.Modify_AreaInput.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.Modify_ButtonsLayout.Controls.Add(this.Modify_Cancel, 1, 0);
             this.Modify_ButtonsLayout.Controls.Add(this.Modify_ModifyButton, 0, 0);
             this.Modify_ButtonsLayout.Location = new System.Drawing.Point(39, 433);
-            this.Modify_ButtonsLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_ButtonsLayout.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_ButtonsLayout.Name = "Modify_ButtonsLayout";
             this.Modify_ButtonsLayout.RowCount = 1;
             this.Modify_ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -138,7 +138,7 @@
             // 
             this.Modify_Cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_Cancel.Location = new System.Drawing.Point(225, 6);
-            this.Modify_Cancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_Cancel.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_Cancel.Name = "Modify_Cancel";
             this.Modify_Cancel.Size = new System.Drawing.Size(150, 56);
             this.Modify_Cancel.TabIndex = 1;
@@ -151,7 +151,7 @@
             // 
             this.Modify_ModifyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_ModifyButton.Location = new System.Drawing.Point(25, 6);
-            this.Modify_ModifyButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_ModifyButton.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_ModifyButton.Name = "Modify_ModifyButton";
             this.Modify_ModifyButton.Size = new System.Drawing.Size(150, 56);
             this.Modify_ModifyButton.TabIndex = 0;
@@ -167,7 +167,7 @@
             this.Modify_ColorLayout.Controls.Add(this.Modify_ColorLabel, 0, 0);
             this.Modify_ColorLayout.Controls.Add(this.Modify_ColorInput, 1, 0);
             this.Modify_ColorLayout.Location = new System.Drawing.Point(39, 161);
-            this.Modify_ColorLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_ColorLayout.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_ColorLayout.Name = "Modify_ColorLayout";
             this.Modify_ColorLayout.RowCount = 1;
             this.Modify_ColorLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -189,7 +189,7 @@
             // 
             this.Modify_ColorInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_ColorInput.Location = new System.Drawing.Point(152, 13);
-            this.Modify_ColorInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_ColorInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_ColorInput.Name = "Modify_ColorInput";
             this.Modify_ColorInput.Size = new System.Drawing.Size(196, 31);
             this.Modify_ColorInput.TabIndex = 1;
@@ -204,7 +204,7 @@
             this.Modify_CoordsLayout.Controls.Add(this.Modify_CoordsLabel, 0, 0);
             this.Modify_CoordsLayout.Controls.Add(this.Modify_CoordsLayoutInput, 0, 1);
             this.Modify_CoordsLayout.Location = new System.Drawing.Point(39, 230);
-            this.Modify_CoordsLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_CoordsLayout.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_CoordsLayout.Name = "Modify_CoordsLayout";
             this.Modify_CoordsLayout.RowCount = 2;
             this.Modify_CoordsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
@@ -235,7 +235,7 @@
             this.Modify_CoordsLayoutInput.Controls.Add(this.Modify_CoordsXInput, 1, 0);
             this.Modify_CoordsLayoutInput.Controls.Add(this.Modify_CoordsXLabel, 0, 0);
             this.Modify_CoordsLayoutInput.Location = new System.Drawing.Point(6, 64);
-            this.Modify_CoordsLayoutInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_CoordsLayoutInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_CoordsLayoutInput.Name = "Modify_CoordsLayoutInput";
             this.Modify_CoordsLayoutInput.RowCount = 1;
             this.Modify_CoordsLayoutInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -257,7 +257,7 @@
             // 
             this.Modify_CoordsYInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_CoordsYInput.Location = new System.Drawing.Point(252, 44);
-            this.Modify_CoordsYInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_CoordsYInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_CoordsYInput.Name = "Modify_CoordsYInput";
             this.Modify_CoordsYInput.Size = new System.Drawing.Size(128, 31);
             this.Modify_CoordsYInput.TabIndex = 1;
@@ -268,7 +268,7 @@
             // 
             this.Modify_CoordsXInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Modify_CoordsXInput.Location = new System.Drawing.Point(58, 44);
-            this.Modify_CoordsXInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_CoordsXInput.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_CoordsXInput.Name = "Modify_CoordsXInput";
             this.Modify_CoordsXInput.Size = new System.Drawing.Size(128, 31);
             this.Modify_CoordsXInput.TabIndex = 0;
@@ -294,7 +294,7 @@
             this.Modify_SearchLayout.Controls.Add(this.Modify_SearchLabel, 0, 0);
             this.Modify_SearchLayout.Controls.Add(this.Modify_NameInput, 1, 0);
             this.Modify_SearchLayout.Location = new System.Drawing.Point(39, 20);
-            this.Modify_SearchLayout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Modify_SearchLayout.Margin = new System.Windows.Forms.Padding(6);
             this.Modify_SearchLayout.Name = "Modify_SearchLayout";
             this.Modify_SearchLayout.RowCount = 1;
             this.Modify_SearchLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -305,31 +305,29 @@
             // 
             this.Modify_ErrorProvider.ContainerControl = this;
             // 
-            // Modify_Draw
+            // Modify_DrawPanel
             // 
-            this.Modify_Draw.Location = new System.Drawing.Point(538, 100);
-            this.Modify_Draw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Modify_Draw.Name = "Modify_Draw";
-            this.Modify_Draw.Size = new System.Drawing.Size(300, 312);
-            this.Modify_Draw.TabIndex = 5;
-            this.Modify_Draw.Click += new System.EventHandler(this.Modify_Draw_Click);
-            this.Modify_Draw.Paint += new System.Windows.Forms.PaintEventHandler(this.Modify_Draw_Paint);
+            this.Modify_DrawPanel.Color = "#000000";
+            this.Modify_DrawPanel.Location = new System.Drawing.Point(479, 91);
+            this.Modify_DrawPanel.Name = "Modify_DrawPanel";
+            this.Modify_DrawPanel.Shape = PAIN___Figury_geometryczne.Figure.Shapes.TRIANGLE;
+            this.Modify_DrawPanel.Size = new System.Drawing.Size(300, 300);
+            this.Modify_DrawPanel.TabIndex = 5;
             // 
             // ModifyDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 516);
-            this.Controls.Add(this.Modify_Draw);
+            this.Controls.Add(this.Modify_DrawPanel);
             this.Controls.Add(this.Modify_SearchLayout);
             this.Controls.Add(this.Modify_AreaLayout);
             this.Controls.Add(this.Modify_ButtonsLayout);
             this.Controls.Add(this.Modify_ColorLayout);
             this.Controls.Add(this.Modify_CoordsLayout);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ModifyDialog";
             this.Text = "Modify";
-            this.Load += new System.EventHandler(this.ModifyDialog_Load);
             this.Modify_AreaLayout.ResumeLayout(false);
             this.Modify_AreaLayout.PerformLayout();
             this.Modify_ButtonsLayout.ResumeLayout(false);
@@ -367,6 +365,6 @@
         private System.Windows.Forms.Label Modify_CoordsXLabel;
         private System.Windows.Forms.TableLayoutPanel Modify_SearchLayout;
         private System.Windows.Forms.ErrorProvider Modify_ErrorProvider;
-        private System.Windows.Forms.Panel Modify_Draw;
+        private DrawFigure Modify_DrawPanel;
     }
 }

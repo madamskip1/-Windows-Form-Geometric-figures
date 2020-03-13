@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PAIN___Figury_geometryczne
 {
-    public abstract class Figure
+    public class Figure
     {
         public enum Shapes { CIRCLE, TRIANGLE, SQUARE}
         public Figure()
@@ -16,8 +16,27 @@ namespace PAIN___Figury_geometryczne
             Coords = new Point();
             Color = "#000000";
         }
-        public abstract string ShapeName();
-        public abstract void Draw(Graphics graphics);
+
+        public Figure(Shapes shape) : this()
+        {
+            Shape = shape;
+        }
+
+        public string ShapeName()
+        {
+            switch(Shape)
+            {
+                case Shapes.CIRCLE:
+                    return "Circle";
+                case Shapes.TRIANGLE:
+                    return "Triangle";
+                case Shapes.SQUARE:
+                    return "Square";
+            }
+
+            throw new Exception("Unknown Shape");
+        }
+
 
         public Shapes Shape
         {

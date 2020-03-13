@@ -45,26 +45,12 @@ namespace PAIN___Figury_geometryczne
 
         private void InitializeEvents()
         {
-
-            //DeleteEvent += new EventHandler<FigureEventArgs>(FigureDeleted);
-            //ModifyDialog.FigureModified += new EventHandler<FigureEventArgs>(FigureModified);
-
-            //FiguresList
         }
         
         private void AddEvent(object sender, FigureEventArgs args) { AddFigureToView(args.Figure); }
         private void DeleteEvent(object sender, FigureEventArgs args) { DeleteFigureFromView(args.Figure); }
 
-        private void ModifyEvent(object sender, FigureEventArgs args)
-        {
-            if (args.Figure == args.Previous)
-                ModifyFigureInView(args.Figure);
-            else
-            {
-                DeleteFigureFromView(args.Previous);
-                AddFigureToView(args.Figure);
-            }
-        }
+        private void ModifyEvent(object sender, FigureEventArgs args) { ModifyFigureInView(args.Figure); }
 
         private void ShowList()
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace PAIN___Figury_geometryczne.View
+namespace PAIN___Figury_geometryczne
 {
     public partial class DrawFigure : UserControl
     {
@@ -22,13 +22,19 @@ namespace PAIN___Figury_geometryczne.View
             }
         }
 
-        public Figure.Shapes Shape { get; private set; }
+        public Figure.Shapes Shape { get; set; }
         public string Color { get; set; }
 
         public DrawFigure()
         {
             InitializeComponent();
             Color = "#000000";
+            Shape = Figure.Shapes.TRIANGLE;
+        }
+
+        public void ReDraw()
+        {
+            Refresh();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -85,6 +91,18 @@ namespace PAIN___Figury_geometryczne.View
             Rectangle rec = new Rectangle(20, 20, 100, 100);
             graphic.FillRectangle(brush, rec);
             graphic.Dispose();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            if (Shape == Figure.Shapes.CIRCLE)
+                Shape = Figure.Shapes.SQUARE;
+            else if (Shape == Figure.Shapes.SQUARE)
+                Shape = Figure.Shapes.TRIANGLE;
+            else if (Shape == Figure.Shapes.TRIANGLE)
+                Shape = Figure.Shapes.CIRCLE;
+
+            ReDraw();
         }
     }
 }

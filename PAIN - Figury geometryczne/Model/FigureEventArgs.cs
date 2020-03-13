@@ -13,22 +13,15 @@ namespace PAIN___Figury_geometryczne
             get;
             set;
         }
-        public Figure Previous
-        {
-            get;
-            set;
-        }
 
         public FigureEventArgs(Figure fig)
         {
             Figure = fig;
-            Previous = null;
         }
 
         public FigureEventArgs(Figure fig, Figure prev)
         {
             Figure = fig;
-            Previous = prev;
         }
     }
 }

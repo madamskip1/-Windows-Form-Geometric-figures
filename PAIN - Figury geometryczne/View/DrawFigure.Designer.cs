@@ -1,4 +1,4 @@
-﻿namespace PAIN___Figury_geometryczne.View
+﻿namespace PAIN___Figury_geometryczne
 {
     partial class DrawFigure
     {
@@ -37,6 +37,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 300);
             this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // DrawFigure

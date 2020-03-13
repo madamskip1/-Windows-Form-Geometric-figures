@@ -12,7 +12,6 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class AddDialog : Form
     {
-        private Figure drawingFigure;
         private Controller.AddDialogController controller;
 
 
@@ -48,8 +47,10 @@ namespace PAIN___Figury_geometryczne
        
         public Figure.Shapes Shape
         {
-            get;
-            private set;
+            get
+            {
+                return Add_DrawPanel.Shape;
+            }
         }
 
 
@@ -67,8 +68,7 @@ namespace PAIN___Figury_geometryczne
 
         private void Add_ClearButton_Click(object sender, EventArgs e)
         {
-            drawingFigure = new Triangle();
-            Shape = drawingFigure.Shape;
+            Add_DrawPanel.Shape = Figure.Shapes.TRIANGLE;
             Add_CoordsXInput.Clear();
             Add_CoordsYInput.Clear();
             Add_ColorInput.Clear();
@@ -168,37 +168,14 @@ namespace PAIN___Figury_geometryczne
 
 
 
-        private void Add_Draw_Paint(object sender, PaintEventArgs e)
-        {
-            drawingFigure.Draw(e.Graphics);
-        }
-        
-
-
-        private void Add_Draw_Click(object sender, EventArgs e)
-        {
-            string color = drawingFigure.Color;
-            if (drawingFigure.Shape == Figure.Shapes.CIRCLE)
-                drawingFigure = new Square();
-            else if (drawingFigure.Shape == Figure.Shapes.SQUARE)
-                drawingFigure = new Triangle();
-            else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
-                drawingFigure = new Circle();
-
-            Shape = drawingFigure.Shape;
-
-            drawingFigure.Color = color;
-
-            Add_ColorInput_TextChanged(this, null);
-        }
-
-
 
         private void Add_ColorInput_TextChanged(object sender, EventArgs e)
         {
-           if (Figure.ValidateColor(Add_ColorInput.Text))
-                drawingFigure.Color = Add_ColorInput.Text;
-            Refresh();
+            if (Figure.ValidateColor(Add_ColorInput.Text))
+            {
+                Add_DrawPanel.Color = Add_ColorInput.Text;
+                Add_DrawPanel.ReDraw();
+            }
         }
     }
 }

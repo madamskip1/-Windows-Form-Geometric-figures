@@ -106,9 +106,9 @@ namespace PAIN___Figury_geometryczne
 
         private void TestValues()
         {
-            Figure fig1 = new Triangle();
-            Figure fig2 = new Square();
-            Figure fig3 = new Circle();
+            Figure fig1 = new Figure(Figure.Shapes.TRIANGLE);
+            Figure fig2 = new Figure(Figure.Shapes.SQUARE);
+            Figure fig3 = new Figure(Figure.Shapes.CIRCLE);
 
             fig1.Label = "Test1";
             fig1.Color = "#111111";

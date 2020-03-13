@@ -34,16 +34,10 @@ namespace PAIN___Figury_geometryczne
                 FigureDeletedEvent(this, new FigureEventArgs(fig));
         }
 
-        public void Update(Figure prev, Figure newF)
+        public void Update(Figure fig)
         {
-            int at = IndexByRef(prev);
-            if (at < 0)
-                return;
-
-            _Figures[at] = newF;
-
             if (FigureModifiedEvent != null)
-                FigureModifiedEvent(this, new FigureEventArgs(newF, prev));
+                FigureModifiedEvent(this, new FigureEventArgs(fig));
         }
 
         public Figure ByName(string name)
