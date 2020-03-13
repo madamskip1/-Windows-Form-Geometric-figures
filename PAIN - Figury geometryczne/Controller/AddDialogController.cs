@@ -51,7 +51,21 @@ namespace PAIN___Figury_geometryczne.Controller
             int y = int.Parse(yText);
             int area = int.Parse(areaText);
 
-            Figure figure = new Triangle();  // TODO: GET SHAPE
+            Figure figure = null;
+            Figure.Shapes shape = AddDialog.Shape;
+
+            switch(shape)
+            {
+                case Figure.Shapes.TRIANGLE:
+                    figure = new Triangle();
+                    break;
+                case Figure.Shapes.CIRCLE:
+                    figure = new Circle();
+                    break;
+                case Figure.Shapes.SQUARE:
+                    figure = new Square();
+                    break;
+            }
 
             figure.Label = label;
             figure.Color = color;

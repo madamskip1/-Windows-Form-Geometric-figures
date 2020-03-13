@@ -45,7 +45,14 @@ namespace PAIN___Figury_geometryczne
             get { return Add_NameInput.Text; }
             set { Add_NameInput.Text = value; }
         }
-            
+       
+        public Figure.Shapes Shape
+        {
+            get;
+            private set;
+        }
+
+
 
         public AddDialog()
         {
@@ -61,6 +68,7 @@ namespace PAIN___Figury_geometryczne
         private void Add_ClearButton_Click(object sender, EventArgs e)
         {
             drawingFigure = new Triangle();
+            Shape = drawingFigure.Shape;
             Add_CoordsXInput.Clear();
             Add_CoordsYInput.Clear();
             Add_ColorInput.Clear();
@@ -75,9 +83,17 @@ namespace PAIN___Figury_geometryczne
                 Close();
         }
 
+
+
+
+        /// ////////////////////////////////////////
+        ///             VALIDATING           //////
+        /// ///////////////////////////////////////
+
+
         private void Add_AreaInput_Validating(object sender, CancelEventArgs e)
         {
-            if(!Figure.ValidateArea(Add_AreaInput.Text))
+            if (!Figure.ValidateArea(Add_AreaInput.Text))
             {
                 Add_ErrorProvider.SetError(Add_AreaInput, "Must be a integer, greater than 0.");
                 e.Cancel = true;
@@ -145,6 +161,11 @@ namespace PAIN___Figury_geometryczne
         {
             Add_ErrorProvider.SetError(Add_NameInput, "");
         }
+        
+        /// ////////////////////////////////////////
+        ///             VALIDATING END       //////
+        /// ///////////////////////////////////////
+
 
 
         private void Add_Draw_Paint(object sender, PaintEventArgs e)
@@ -164,6 +185,7 @@ namespace PAIN___Figury_geometryczne
             else if (drawingFigure.Shape == Figure.Shapes.TRIANGLE)
                 drawingFigure = new Circle();
 
+            Shape = drawingFigure.Shape;
 
             drawingFigure.Color = color;
 
@@ -174,7 +196,7 @@ namespace PAIN___Figury_geometryczne
 
         private void Add_ColorInput_TextChanged(object sender, EventArgs e)
         {
-            if (Figure.ValidateColor(Add_ColorInput.Text))
+           if (Figure.ValidateColor(Add_ColorInput.Text))
                 drawingFigure.Color = Add_ColorInput.Text;
             Refresh();
         }

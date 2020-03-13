@@ -12,7 +12,6 @@ namespace PAIN___Figury_geometryczne
 {
     public partial class ModifyDialog : Form
     {
-        private Figure cur;
         private Figure drawingFigure;
         private Controller.ModifyDialogController controller;
 
@@ -65,32 +64,36 @@ namespace PAIN___Figury_geometryczne
 
         private void Modify_ModifyButton_Click(object sender, EventArgs e)
         {
-            FigureEventArgs args;
-            if(cur.Shape != drawingFigure.Shape)
-            {
-                drawingFigure.Label = Modify_NameInput.Text;
-                drawingFigure.Coords.X = int.Parse(Modify_CoordsXInput.Text);
-                drawingFigure.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
-                drawingFigure.Area = int.Parse(Modify_AreaInput.Text);
-                drawingFigure.Color = Modify_ColorInput.Text;
-            }
-            else
-            {
-                cur.Label = Modify_NameInput.Text;
-                cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
-                cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
-                cur.Area = int.Parse(Modify_AreaInput.Text);
-                cur.Color = Modify_ColorInput.Text;
-                drawingFigure = null;
-                //args = new FigureEventArgs(cur);
-            }
+            //FigureEventArgs args;
+            //if(cur.Shape != drawingFigure.Shape)
+            //{
+            //    drawingFigure.Label = Modify_NameInput.Text;
+            //    drawingFigure.Coords.X = int.Parse(Modify_CoordsXInput.Text);
+            //    drawingFigure.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
+            //    drawingFigure.Area = int.Parse(Modify_AreaInput.Text);
+            //    drawingFigure.Color = Modify_ColorInput.Text;
+            //}
+            //else
+            //{
+            //    cur.Label = Modify_NameInput.Text;
+            //    cur.Coords.X = int.Parse(Modify_CoordsXInput.Text);
+            //    cur.Coords.Y = int.Parse(Modify_CoordsYInput.Text);
+            //    cur.Area = int.Parse(Modify_AreaInput.Text);
+            //    cur.Color = Modify_ColorInput.Text;
+            //    drawingFigure = null;
+            //    //args = new FigureEventArgs(cur);
+            //}
 
-            controller.FigureModified(cur, drawingFigure);
+            //controller.FigureModified(cur, drawingFigure);
             //if (FigureModified != null)
             //    FigureModified(this, args);
 
             Close();
         }
+
+        /// ////////////////////////////////////////
+        ///             VALIDATING           //////
+        /// ///////////////////////////////////////
 
         private void Modify_NameInput_Validated(object sender, EventArgs e)
         {
@@ -163,6 +166,10 @@ namespace PAIN___Figury_geometryczne
             }
         }
 
+        /// ////////////////////////////////////////
+        ///             VALIDATING   End     //////
+        /// ///////////////////////////////////////
+
         private void Modify_Draw_Paint(object sender, PaintEventArgs e)
         {
             if (DrawingFigure == null)
@@ -173,9 +180,9 @@ namespace PAIN___Figury_geometryczne
 
         private void Modify_ColorInput_TextChanged(object sender, EventArgs e)
         {
-            //if (Figure.ValidateColor(Modify_ColorInput.Text))
-            //    drawingFigure.Color = Modify_ColorInput.Text;
-            //Refresh();
+            if (Figure.ValidateColor(Modify_ColorInput.Text))
+                DrawingFigure.Color = Modify_ColorInput.Text;
+            Refresh();
         }
 
         private void Modify_Draw_Click(object sender, EventArgs e)
@@ -214,6 +221,12 @@ namespace PAIN___Figury_geometryczne
 
             DrawingFigure.Color = Color;
             Refresh();
+        }
+
+        private void ModifyDialog_Load(object sender, EventArgs e)
+        {
+            if (DrawingFigure == null)
+                CreateDrawingFigure();
         }
     }
 }
