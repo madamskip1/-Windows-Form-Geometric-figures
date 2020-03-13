@@ -31,8 +31,8 @@ namespace PAIN___Figury_geometryczne
         // Check if form can be closed (at least one form alive)
         void closingChild(object sender, FormClosingEventArgs e)
         {
-            if (this.MdiChildren.Length < 2)
-                e.Cancel = true;
+           // if (this.MdiChildren.Length < 2)
+            //    e.Cancel = true;
         }
 
 
@@ -48,7 +48,7 @@ namespace PAIN___Figury_geometryczne
             list.LoadFiguresList(figures);
 
             list.MdiParent = this;
-            list.FormClosing += closingChild;
+            //list.FormClosing += closingChild;
             list.Show();
             list.Activate();
         }
@@ -84,5 +84,9 @@ namespace PAIN___Figury_geometryczne
             figures.Add(fig3);
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
     }
 }

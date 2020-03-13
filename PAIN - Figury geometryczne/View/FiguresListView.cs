@@ -214,5 +214,10 @@ namespace PAIN___Figury_geometryczne
             View_DeleteButton_Click(this, null);
         }
 
+        private void FiguresListView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.MdiParent.MdiChildren.Length < 2)
+                e.Cancel = true;
+        }
     }
 }
