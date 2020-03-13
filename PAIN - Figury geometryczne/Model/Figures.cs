@@ -30,6 +30,7 @@ namespace PAIN___Figury_geometryczne
         public void Delete(Figure fig)
         {
             _Figures.Remove(fig);
+
             if(FigureDeletedEvent != null)
                 FigureDeletedEvent(this, new FigureEventArgs(fig));
         }
@@ -40,36 +41,5 @@ namespace PAIN___Figury_geometryczne
                 FigureModifiedEvent(this, new FigureEventArgs(fig));
         }
 
-        public Figure ByName(string name)
-        {
-            Figure result = _Figures.Find(x => x.Label == name);
-
-            return result;
-        }
-
-        public Figure ByRef(Figure fig)
-        {
-
-            int at = IndexByRef(fig);
-            if (at < 0)
-                return null;
-
-            return _Figures[at];
-        }
-
-        public int IndexByRef(Figure fig)
-        {
-            int at = 0;
-
-            foreach(Figure item in _Figures)
-            {
-                if (item == fig)
-                    return at;
-
-                at++;
-            }
-
-            return -1;
-        }
     }
 }

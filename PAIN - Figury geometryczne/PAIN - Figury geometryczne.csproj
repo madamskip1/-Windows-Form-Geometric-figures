@@ -46,15 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AddDialogController.cs" />
-    <Compile Include="Controller\FiguresListViewController.cs" />
-    <Compile Include="Controller\ModifyDialogController.cs" />
-    <Compile Include="View\AddDialog.cs">
+    <Compile Include="Controller\AddModifyController.cs" />
+    <Compile Include="View\AddModifyDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddDialog.Designer.cs">
-      <DependentUpon>AddDialog.cs</DependentUpon>
+    <Compile Include="View\AddModifyDialog.Designer.cs">
+      <DependentUpon>AddModifyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\FiguresListViewController.cs" />
     <Compile Include="Model\Figure.cs" />
     <Compile Include="Model\FigureEventArgs.cs" />
     <Compile Include="Model\Figures.cs" />
@@ -76,17 +75,11 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ModifyDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ModifyDialog.Designer.cs">
-      <DependentUpon>ModifyDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\AddDialog.resx">
-      <DependentUpon>AddDialog.cs</DependentUpon>
+    <EmbeddedResource Include="View\AddModifyDialog.resx">
+      <DependentUpon>AddModifyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DrawFigure.resx">
       <DependentUpon>DrawFigure.cs</DependentUpon>
@@ -96,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ModifyDialog.resx">
-      <DependentUpon>ModifyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

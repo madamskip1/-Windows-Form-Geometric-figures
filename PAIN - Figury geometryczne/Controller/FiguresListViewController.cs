@@ -15,29 +15,28 @@ namespace PAIN___Figury_geometryczne.Controller
             figures = figs;
         }
 
+        // Add button clicked
         public void AddClicked()
         {
-            AddDialogController addDialogController = new AddDialogController();
-            addDialogController.SetFigures(figures);
-            addDialogController.RunModal();
-            
+            AddModifyController addModifyController = new AddModifyController();
+            addModifyController.SetFigures(figures);
+            addModifyController.RunAddModal();
         }
 
+        // Modify button or context menu clicked
         public void ModifyClicked(Figure fig)
         {
-            ModifyDialogController modifyDialogController = new ModifyDialogController();
-            modifyDialogController.SetFigures(figures);
-            modifyDialogController.SetFigure(fig);
-            modifyDialogController.RunModal();
+            AddModifyController addModifyController = new AddModifyController();
+            addModifyController.SetFigures(figures);
+            addModifyController.SetFigureToModify(fig);
+            addModifyController.RunModifyModal();
         }
 
+        // Delete button or context menu clicked
         public void DeleteClicked(Figure fig)
         {
             figures.Delete(fig);
         }
-
-
-
 
     }
 }

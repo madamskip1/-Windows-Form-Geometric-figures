@@ -13,15 +13,13 @@ namespace PAIN___Figury_geometryczne
     public partial class MainForm : Form
     {
 
-        public event EventHandler DeleteClicked;
-        public event EventHandler ModifyClicked;
+
         private Controller.FiguresListViewController FiguresListViewController;
         private Figures figures;
 
         public MainForm()
         {
             InitializeComponent();
-            InitalizeEvents();
 
             figures = new Figures();
             FiguresListViewController = new Controller.FiguresListViewController();
@@ -30,15 +28,7 @@ namespace PAIN___Figury_geometryczne
         }
 
 
-        private void InitalizeEvents()
-        {
-
-        }
-
-
-        /// <summary>
-        /// Check if form can be closed
-        /// </summary>
+        // Check if form can be closed (at least one form alive)
         void closingChild(object sender, FormClosingEventArgs e)
         {
             if (this.MdiChildren.Length < 2)
@@ -46,28 +36,11 @@ namespace PAIN___Figury_geometryczne
         }
 
 
-        private void MainButtons_Add_Click(object sender, EventArgs e)
-        {
-            AddDialog add = new AddDialog();
-            add.ShowDialog();
-        }
 
-        private void MainButtons_Modify_Click(object sender, EventArgs e)
-        {
-            if (ModifyClicked != null)
-                ModifyClicked(this, null);
-        }
-
-        private void MainButtons_Delete_Click(object sender, EventArgs e)
-        {
-            if (DeleteClicked != null)
-                DeleteClicked(this, null);
-
-        }
 
         private void MainButtons_New_View_Click(object sender, EventArgs e)
         {
-            FiguresListView list = new FiguresListView(/*ref DeleteClicked, ref ModifyClicked*/);
+            FiguresListView list = new FiguresListView();
 
             //controller.SetListView(list);
             list.SetController(FiguresListViewController);
@@ -80,30 +53,11 @@ namespace PAIN___Figury_geometryczne
             list.Activate();
         }
 
-        private void newViewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainButtons_New_View_Click(sender, e);
-        }
-
-        private void newViewToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MainButtons_New_View_Click(sender, e);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
 
-
-
+        // Add test values to list 
+        // Just for tests
         private void TestValues()
         {
             Figure fig1 = new Figure(Figure.Shapes.TRIANGLE);

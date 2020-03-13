@@ -16,10 +16,7 @@ namespace PAIN___Figury_geometryczne
 
         private Color DrawingColor
         {
-            get
-            {
-                return System.Drawing.ColorTranslator.FromHtml(Color);
-            }
+            get { return System.Drawing.ColorTranslator.FromHtml(Color); }
         }
 
         public Figure.Shapes Shape { get; set; }
@@ -28,8 +25,8 @@ namespace PAIN___Figury_geometryczne
         public DrawFigure()
         {
             InitializeComponent();
-            Color = "#000000";
-            Shape = Figure.Shapes.TRIANGLE;
+            Color = "#000000"; // Default color
+            Shape = Figure.Shapes.TRIANGLE; // Default shape
         }
 
         public void ReDraw()
@@ -37,6 +34,7 @@ namespace PAIN___Figury_geometryczne
             Refresh();
         }
 
+        // Draw shape after showing dialog
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Draw(e.Graphics);
@@ -58,6 +56,7 @@ namespace PAIN___Figury_geometryczne
             }
         }
 
+        
         private void DrawTriangle(Graphics graphic)
         {
             Pen pen = new Pen(DrawingColor, 5);
@@ -72,6 +71,7 @@ namespace PAIN___Figury_geometryczne
             graphic.Dispose();
         }
 
+
         private void DrawCircle(Graphics graphic)
         {
             Pen pen = new Pen(DrawingColor, 5);
@@ -83,6 +83,7 @@ namespace PAIN___Figury_geometryczne
 
         }
 
+
         private void DrawSquare(Graphics graphic)
         {
             Pen pen = new Pen(DrawingColor, 5);
@@ -93,6 +94,8 @@ namespace PAIN___Figury_geometryczne
             graphic.Dispose();
         }
 
+
+        // Drawing panel clicked - change shape
         private void panel1_Click(object sender, EventArgs e)
         {
             if (Shape == Figure.Shapes.CIRCLE)

@@ -10,7 +10,13 @@ namespace PAIN___Figury_geometryczne
 {
     public class Figure
     {
-        public enum Shapes { CIRCLE, TRIANGLE, SQUARE}
+        public enum Shapes { CIRCLE, TRIANGLE, SQUARE }
+        public Shapes Shape { get; set; }
+        public string Color { get; set; }
+        public Point Coords { get; set; }
+        public int Area { get; set; }
+        public string Label { get; set; }
+        
         public Figure()
         {
             Coords = new Point();
@@ -35,37 +41,6 @@ namespace PAIN___Figury_geometryczne
             }
 
             throw new Exception("Unknown Shape");
-        }
-
-
-        public Shapes Shape
-        {
-            get;
-            set;
-        }
-        
-        public string Color
-        {
-            get;
-            set;
-        }
-
-        public Point Coords
-        {
-            get;
-            set;
-        }
-
-        public int Area
-        {
-            get;
-            set;
-        }
-
-        public string Label
-        {
-            get;
-            set;
         }
 
 

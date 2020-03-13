@@ -8,18 +8,9 @@ namespace PAIN___Figury_geometryczne
 {
     public class FigureEventArgs : EventArgs
     {
-        public Figure Figure
-        {
-            get;
-            set;
-        }
+        public Figure Figure { get; set; }
 
         public FigureEventArgs(Figure fig)
-        {
-            Figure = fig;
-        }
-
-        public FigureEventArgs(Figure fig, Figure prev)
         {
             Figure = fig;
         }
