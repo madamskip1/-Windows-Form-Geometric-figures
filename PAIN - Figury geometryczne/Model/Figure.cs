@@ -44,6 +44,10 @@ namespace PAIN___Figury_geometryczne
         }
 
 
+
+
+
+
         public static bool ValidateArea(string area)
         {
             int result;

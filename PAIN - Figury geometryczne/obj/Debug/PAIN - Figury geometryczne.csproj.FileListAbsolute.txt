@@ -23,3 +23,4 @@ C:\Users\madam\source\repos\madamskip1\-Windows-Form-Geometric-figures\PAIN - Fi
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.AddModifyDialog.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN___Figury_geometryczne.DrawFigure.resources
 C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csprojAssemblyReference.cache
+C:\Programowanie\PAIN - Figury geometryczne\PAIN - Figury geometryczne\obj\Debug\PAIN - Figury geometryczne.csproj.CoreCompileInputs.cache

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.DrawPanel = new PAIN___Figury_geometryczne.DrawFigure();
             this.NameLayout = new System.Windows.Forms.TableLayoutPanel();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NameInput = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.CoordsXInput = new System.Windows.Forms.TextBox();
             this.CoordsXLabel = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DrawPanel = new PAIN___Figury_geometryczne.DrawFigure();
             this.NameLayout.SuspendLayout();
             this.AreaLayout.SuspendLayout();
             this.Add_ButtonsLayout.SuspendLayout();
@@ -58,16 +58,6 @@
             this.CoordsLayoutInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DrawPanel
-            // 
-            this.DrawPanel.Color = "#000000";
-            this.DrawPanel.Location = new System.Drawing.Point(260, 48);
-            this.DrawPanel.Margin = new System.Windows.Forms.Padding(1);
-            this.DrawPanel.Name = "DrawPanel";
-            this.DrawPanel.Shape = PAIN___Figury_geometryczne.Figure.Shapes.TRIANGLE;
-            this.DrawPanel.Size = new System.Drawing.Size(150, 156);
-            this.DrawPanel.TabIndex = 11;
             // 
             // NameLayout
             // 
@@ -100,6 +90,8 @@
             this.NameInput.Name = "NameInput";
             this.NameInput.Size = new System.Drawing.Size(100, 20);
             this.NameInput.TabIndex = 0;
+            this.NameInput.Validating += new System.ComponentModel.CancelEventHandler(this.NameInput_Validated);
+            this.NameInput.Validated += new System.EventHandler(this.NameInput_Validated);
             // 
             // AreaLayout
             // 
@@ -133,6 +125,8 @@
             this.AreaInput.Name = "AreaInput";
             this.AreaInput.Size = new System.Drawing.Size(100, 20);
             this.AreaInput.TabIndex = 0;
+            this.AreaInput.Validating += new System.ComponentModel.CancelEventHandler(this.AreaInput_Validating);
+            this.AreaInput.Validated += new System.EventHandler(this.AreaInput_Validated);
             // 
             // Add_ButtonsLayout
             // 
@@ -203,6 +197,8 @@
             this.ColorInput.Size = new System.Drawing.Size(100, 20);
             this.ColorInput.TabIndex = 0;
             this.ColorInput.TextChanged += new System.EventHandler(this.ColorInput_TextChanged);
+            this.ColorInput.Validating += new System.ComponentModel.CancelEventHandler(this.ColorInput_Validating);
+            this.ColorInput.Validated += new System.EventHandler(this.ColorInput_Validated);
             // 
             // CoordsLayout
             // 
@@ -263,6 +259,8 @@
             this.CoordsYInput.Name = "CoordsYInput";
             this.CoordsYInput.Size = new System.Drawing.Size(66, 20);
             this.CoordsYInput.TabIndex = 1;
+            this.CoordsYInput.Validating += new System.ComponentModel.CancelEventHandler(this.CoordsYInput_Validating);
+            this.CoordsYInput.Validated += new System.EventHandler(this.CoordsYInput_Validated);
             // 
             // CoordsXInput
             // 
@@ -271,6 +269,8 @@
             this.CoordsXInput.Name = "CoordsXInput";
             this.CoordsXInput.Size = new System.Drawing.Size(66, 20);
             this.CoordsXInput.TabIndex = 0;
+            this.CoordsXInput.Validating += new System.ComponentModel.CancelEventHandler(this.CoordsXInput_Validating);
+            this.CoordsXInput.Validated += new System.EventHandler(this.CoordsXInput_Validated);
             // 
             // CoordsXLabel
             // 
@@ -285,6 +285,16 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // DrawPanel
+            // 
+            this.DrawPanel.Color = "#000000";
+            this.DrawPanel.Location = new System.Drawing.Point(258, 48);
+            this.DrawPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.DrawPanel.Name = "DrawPanel";
+            this.DrawPanel.Shape = PAIN___Figury_geometryczne.Figure.Shapes.CIRCLE;
+            this.DrawPanel.Size = new System.Drawing.Size(124, 142);
+            this.DrawPanel.TabIndex = 11;
             // 
             // AddModifyDialog
             // 

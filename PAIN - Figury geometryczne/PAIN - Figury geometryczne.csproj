@@ -57,6 +57,7 @@
     <Compile Include="Model\Figure.cs" />
     <Compile Include="Model\FigureEventArgs.cs" />
     <Compile Include="Model\Figures.cs" />
+    <Compile Include="View\FigureEditor.cs" />
     <Compile Include="View\DrawFigure.cs">
       <SubType>UserControl</SubType>
     </Compile>

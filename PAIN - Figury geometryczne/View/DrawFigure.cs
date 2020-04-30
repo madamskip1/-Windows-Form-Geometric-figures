@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PAIN___Figury_geometryczne.View;
 
 namespace PAIN___Figury_geometryczne
 {
@@ -19,13 +19,21 @@ namespace PAIN___Figury_geometryczne
             get { return System.Drawing.ColorTranslator.FromHtml(Color); }
         }
 
-        public Figure.Shapes Shape { get; set; }
+        [EditorAttribute(typeof(FigureEditor), 
+            typeof(System.Drawing.Design.UITypeEditor))]
+        [Category("Figure control")]
+        [BrowsableAttribute(true)]
+        public Figure.Shapes Shape { 
+            get { return _shape; }
+            set { _shape = value; Invalidate(); ReDraw();  }
+        }
         public string Color { get; set; }
 
+        private Figure.Shapes _shape;
         public DrawFigure()
         {
             InitializeComponent();
-            Color = "#000000"; // Default color
+            Color = "#5a42f5"; // Default color
             Shape = Figure.Shapes.TRIANGLE; // Default shape
         }
 
@@ -95,6 +103,9 @@ namespace PAIN___Figury_geometryczne
         }
 
 
+
+
+
         // Drawing panel clicked - change shape
         private void panel1_Click(object sender, EventArgs e)
         {
@@ -106,6 +117,17 @@ namespace PAIN___Figury_geometryczne
                 Shape = Figure.Shapes.CIRCLE;
 
             ReDraw();
+        }
+
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            //Pen pen = new Pen(DrawingColor, 5);
+            //Brush brush = new SolidBrush(DrawingColor);
+
+            //Rectangle rec = new Rectangle(20, 20, 100, 100);
+            //e.Graphics.FillRectangle(brush, rec);
+            //e.Graphics.Dispose();
         }
     }
 }

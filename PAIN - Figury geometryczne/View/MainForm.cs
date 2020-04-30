@@ -28,15 +28,6 @@ namespace PAIN___Figury_geometryczne
         }
 
 
-        // Check if form can be closed (at least one form alive)
-        void closingChild(object sender, FormClosingEventArgs e)
-        {
-           // if (this.MdiChildren.Length < 2)
-            //    e.Cancel = true;
-        }
-
-
-
 
         private void MainButtons_New_View_Click(object sender, EventArgs e)
         {

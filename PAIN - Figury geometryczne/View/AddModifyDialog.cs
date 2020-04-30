@@ -17,36 +17,32 @@ namespace PAIN___Figury_geometryczne
             get { return CoordsXInput.Text; }
             set { CoordsXInput.Text = value; }
         }
-
         public string CoordY
         {
             get { return CoordsYInput.Text; }
             set { CoordsYInput.Text = value; }
         }
-
         public string Area
         {
             get { return AreaInput.Text; }
             set { AreaInput.Text = value; }
         }
-
         public string Color
         {
             get { return ColorInput.Text; }
             set { ColorInput.Text = value; }
         }
-
         public string Label
         {
             get { return NameInput.Text; }
             set { NameInput.Text = value; }
         }
-
         public Figure.Shapes Shape
         {
             get { return DrawPanel.Shape; }
             set { DrawPanel.Shape = value; }
         }
+
 
         private AddModifyController controller;
 
@@ -68,6 +64,10 @@ namespace PAIN___Figury_geometryczne
 
 
 
+
+
+
+
         private void ColorInput_TextChanged(object sender, EventArgs e)
         {
             if (Figure.ValidateColor(ColorInput.Text))
@@ -86,6 +86,11 @@ namespace PAIN___Figury_geometryczne
         {
             controller.DialogClosed();
         }
+
+
+
+
+
 
 
         /// ////////////////////////////////////////
@@ -167,6 +172,7 @@ namespace PAIN___Figury_geometryczne
         {
             Close();
         }
+
 
         /// ////////////////////////////////////////
         ///             VALIDATING END       //////

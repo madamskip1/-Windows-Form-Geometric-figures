@@ -40,6 +40,8 @@ namespace PAIN___Figury_geometryczne
         {
             Controller = ctrl;
         }
+
+
         
         // Add event - invoked after adding figure
         private void AddEvent(object sender, FigureEventArgs args) { AddFigureToView(args.Figure); }
@@ -50,6 +52,8 @@ namespace PAIN___Figury_geometryczne
         // Modify event - invoked after modifying figure
         private void ModifyEvent(object sender, FigureEventArgs args) { ModifyFigureInView(args.Figure); }
         
+
+
 
         private void ShowList()
         {
@@ -133,6 +137,10 @@ namespace PAIN___Figury_geometryczne
         }
 
 
+
+
+
+
         private void UpdateStatusBar()
         {
             StatusBar_Items.Text = listView.Items.Count.ToString();
@@ -154,6 +162,13 @@ namespace PAIN___Figury_geometryczne
 
             return false;
         }
+
+
+
+
+
+
+
 
         private void View_AddButton_Click(object sender, EventArgs e)
         {
